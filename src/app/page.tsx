@@ -1,5 +1,5 @@
 
-import { Briefcase, Code, Database, GitMerge, Github, GraduationCap, Linkedin, Mail, Palette, Server, Smartphone, Twitter } from 'lucide-react';
+import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { Header } from '@/components/header';
@@ -9,6 +9,88 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import { AnimatedOnScroll } from '@/components/animated-on-scroll';
+
+const ReactIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.23174 23 20.46348" className="h-full w-full">
+      <title>React Logo</title>
+      <circle cx="0" cy="0" r="2.05" fill="currentColor"/>
+      <g stroke="currentColor" strokeWidth="1" fill="none">
+        <ellipse rx="11" ry="4.2"/>
+        <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+        <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+      </g>
+    </svg>
+)
+
+const NextjsIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Next.js</title>
+        <path d="M9.041 12.836L14.959 7.164v10l-5.918-5.672zM15.5 4l-11.25 8 11.25 8V4z" />
+    </svg>
+)
+
+const TypeScriptIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
+        <title>TypeScript</title>
+        <path d="M1.5 0h21v21h-21z" fill="currentColor"/>
+        <path d="M12.288 15.328h2.64v-1.056h-1.056v-3.3h1.056v-1.056h-2.64v1.056h1.056v3.3h-1.056zm-3.972-.348c.42 0 .756-.156.996-.456l.816.66c-.396.504-.96.792-1.812.792-.612 0-1.116-.168-1.524-.504s-.612-.78-.612-1.32c0-.528.204-1.008.612-1.44s.936-.648 1.596-.648c.876 0 1.488.42 1.836 1.044l-.9.504c-.216-.432-.552-.648-.996-.648-.324 0-.588.108-.792.324s-.300.5-.300.864c0 .36.108.636.324.828s.456.288.756.288m10.824-2.544c.576 0 1.044.18 1.404.528s.54.792.54 1.332c0 .552-.18 1.01-.54 1.368s-.828.54-1.404.54c-.564 0-1.032-.18-1.404-.54s-.564-.816-.564-1.368c0-.54.18-1 .552-1.344s.828-.516 1.416-.516m0 5.4c1.332 0 2.292-.372 2.892-1.116s.9-1.74.9-2.988c0-1.26-.3-2.256-.9-2.988s-1.56-1.104-2.892-1.104c-1.344 0-2.316.36-2.916 1.08s-.9 1.716-.9 2.964c0 1.296.3 2.292.9 3.012s1.572 1.08 2.916 1.08" fill="hsl(var(--background))"/>
+    </svg>
+)
+
+const TailwindCssIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-full w-full">
+        <path fill="currentColor" d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c-1.2,4.8,0.6,7.2,3.6,7.2c2.4,0,3.6-1.2,4.8-3.6l-1.8-1.8 c-0.6,1.2-1.2,1.8-2.4,1.8c-1.2,0-1.8-0.6-2.4-1.8c-0.6-1.8-0.6-3.6,0-5.4c0.6-1.2,1.2-1.8,2.4-1.8s1.8,0.6,2.4,1.8l1.8-1.8 C15.601,6,14.401,4.8,12.001,4.8z M18.601,12c-1.2,4.8,0.6,7.2,3.6,7.2c2.4,0,3.6-1.2,4.8-3.6l-1.8-1.8 c-0.6,1.2-1.2,1.8-2.4,1.8c-1.2,0-1.8-0.6-2.4-1.8c-0.6-1.8-0.6-3.6,0-5.4c0.6-1.2,1.2-1.8,2.4-1.8c1.2,0,1.8,0.6,2.4,1.8l1.8-1.8 C22.201,6,21.001,4.8,18.601,4.8c-3.2,0-5.2,1.6-6,4.8C11.401,16.8,15.401,18,18.601,12z"></path>
+    </svg>
+)
+
+const NodejsIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Node.js</title>
+        <path d="M11.996 0L2.333 5.583v11.162l9.663 5.583 9.667-5.583V5.583L11.996 0zM12 1.12l8.529 4.922v9.914l-8.529 4.924-8.53-4.924V6.042L12 1.12z"/>
+    </svg>
+)
+
+const FirebaseIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Firebase</title>
+        <path d="M3.66 12.015L11.97.28l.386.21 7.917 4.571-3.253 1.871-4.706-2.73-7.53 4.342v8.69l3.124-1.8v-5.12l4.407-2.54 4.407 2.54v4.957l-4.29 2.478-3.123-1.794.006-8.49zM11.995 13.29l-4.405-2.547-3.122 1.8v3.6l7.527 4.345.11-.064 7.53-4.346v-3.598l-3.123-1.802-4.407 2.553z"/>
+    </svg>
+)
+
+const PostgreSqlIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>PostgreSQL</title>
+        <path d="M11.91 21.391c-2.31 0-3.33-1.12-3.33-3.131V8.5h2.3v9.551c0 .41.13.75.46.75s.46-.34.46-.75V8.5h2.31v9.76c0 2.01-1.02 3.13-3.2 3.13zm-5.7-12.89v9.75c0 .7.31 1.25.91 1.25s.91-.55.91-1.25V8.5h2.3v9.55c0 2.01-1.02 3.13-3.2 3.13s-3.22-1.12-3.22-3.13V8.5h2.3zm12.51 3.9c0-1.87-.93-2.92-2.79-2.92-1.03 0-1.7.35-2.22.95v-.82H14.4v9.64h2.3v-4.3c.52-.6 1.19-.95 2.22-.95.84 0 1.39.42 1.39 1.48v3.72h2.3v-5.8h-.02z"/>
+    </svg>
+)
+
+const MongoDbIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>MongoDB</title>
+        <path d="M12.33,23.37a5.2,5.2,0,0,1-1.89-.36,10.6,10.6,0,0,1-5.32-4.15,13.23,13.23,0,0,1-2.94-7.44,13.43,13.43,0,0,1,2.83-8.86,10.3,10.3,0,0,1,8.35-4.14A10.23,10.23,0,0,1,21.8,2.58a13.33,13.33,0,0,1,2.81,9,13.2,13.2,0,0,1-2.82,8.91,10.33,10.33,0,0,1-8.4,4.14,6.33,6.33,0,0,1-1.06-.11Zm-1-10.45a.72.72,0,0,0,0,1.43c2.3,0,2.3-2.42,0-2.42a.72.72,0,0,0-.71.71.72.72,0,0,0,.71.72,1,1,0,0,1,1,1,.71.71,0,0,0,.71.72.72.72,0,0,0,.72-.72c0-2.3-2.3-2.3-2.42,0Z"/>
+    </svg>
+)
+
+const GitIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Git</title>
+        <path d="M23.996 11.233c-.05-.499-.228-.964-.5-1.378l-4.62-7.14c-.542-.838-1.554-1.3-2.61-1.3H7.728c-1.056 0-2.068.462-2.61 1.3l-4.62 7.14c-.272.414-.45.879-.5 1.378a3.172 3.172 0 0 0 .15 1.536l7.73 10.966c.517.733 1.488 1.156 2.5 1.156h.002c1.012 0 1.983-.423 2.5-1.156l7.73-10.966a3.172 3.172 0 0 0 .15-1.536zM12 18.067l-5.15-7.303h3.54a.615.615 0 0 0 .61-.61V6.93a.616.616 0 0 0-.61-.61h-2.9L12 2.133l4.57 4.187h-2.9a.616.616 0 0 0-.61.61v3.223a.615.615 0 0 0 .61.61h3.54l-5.15 7.303z"/>
+    </svg>
+)
+
+const DockerIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Docker</title>
+        <path d="M22.152 7.27c-1.35-1.332-3.21-2.22-5.19-2.22H7.038c-1.98 0-3.84 1.092-5.19 2.22-1.14 1.116-1.848 2.7-1.848 4.392v4.56c0 1.692.708 3.276 1.848 4.392 1.35 1.128 3.21 2.22 5.19 2.22h9.924c1.98 0 3.84-1.092 5.19-2.22 1.14-1.116 1.848-2.7 1.848-4.392v-4.56c0-1.692-.708-3.48-1.848-4.392zm-1.056 8.82c-.9.9-2.316 1.548-3.876 1.548H7.314c-1.56 0-2.976-.648-3.876-1.548a4.108 4.108 0 0 1-1.38-3.264v-1.14c.237-.06.48-.108.708-.18.72-.252 1.417-.588 2.064-.996.36-.228.696-.48.996-.756.24-.216.516-.42.756-.636.228-.204.456-.408.672-.6.204-.192.408-.384.588-.576.228-.24.432-.492.636-.756.192-.252.36-.528.504-.816.144-.288.264-.588.36-.9.084-.3.156-.612.192-.936H11.4v4.5h2.25v-4.5h1.116c.036.324.108.636.192.936.096.312.216.612.36.9.144.288.312.564.504.816.204.264.408.516.636.756.18.192.384.384.588.576.216.192.444.396.672.6.24.216.516.42.756.636.3.276.636.528.996.756.648.408 1.344.744 2.064.996.228.072.471.12.708.18v1.14c0 1.224-.48 2.388-1.38 3.264zM4.5 10.5H3V9h1.5zm3 0H6V9h1.5zm3 0H9V9h1.5zm3 0H12V9h1.5z"/>
+    </svg>
+)
+
+const FigmaIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Figma</title>
+        <path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zM8.25 12a3.75 3.75 0 0 1 3.75-3.75V12h-3.75zm0 3.75h3.75v3.75a3.75 3.75 0 0 1-3.75-3.75zM12 8.25A3.75 3.75 0 0 1 15.75 12h-3.75V8.25zm0 3.75h3.75a3.75 3.75 0 0 1-3.75 3.75v-3.75zM8.25 8.25a3.75 3.75 0 0 1 3.75-3.75v3.75h-3.75z"/>
+    </svg>
+)
 
 export default function Home() {
   return (
@@ -77,7 +159,7 @@ function AboutSection() {
     <section id="about" className="w-full bg-background py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto grid items-center gap-12 px-4 md:grid-cols-2 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000"
+          classNameIn="animate-in fade-in slide-in-from-left-16 duration-750"
           classNameOut="animate-out fade-out slide-out-to-left-16 duration-750 opacity-0"
         >
           <div className="space-y-4">
@@ -93,7 +175,7 @@ function AboutSection() {
           </div>
         </AnimatedOnScroll>
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in slide-in-from-right-16 duration-1000 delay-200"
+          classNameIn="animate-in fade-in slide-in-from-right-16 duration-750 delay-200"
           classNameOut="animate-out fade-out slide-out-to-right-16 duration-750 opacity-0"
           className="relative hidden items-center justify-center md:flex"
         >
@@ -136,7 +218,7 @@ function ExperienceSection() {
     <section id="experience" className="w-full bg-secondary py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in duration-1000"
+          classNameIn="animate-in fade-in duration-750"
           classNameOut="animate-out fade-out duration-750 opacity-0"
           className="mb-12 text-center"
         >
@@ -152,7 +234,7 @@ function ExperienceSection() {
           {experiences.map((item, index) => (
             <AnimatedOnScroll
               key={item.role}
-              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-1000"
+              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-750"
               classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-750 opacity-0"
               style={{ animationDelay: `${index * 150}ms` }}
             >
@@ -202,7 +284,7 @@ function EducationSection() {
     <section id="education" className="w-full py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in duration-1000"
+          classNameIn="animate-in fade-in duration-750"
           classNameOut="animate-out fade-out duration-750 opacity-0"
           className="mb-12 text-center"
         >
@@ -218,7 +300,7 @@ function EducationSection() {
           {educationItems.map((item, index) => (
             <AnimatedOnScroll
               key={item.degree}
-              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-1000"
+              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-750"
               classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-750 opacity-0"
               style={{ animationDelay: `${index * 150}ms` }}
             >
@@ -240,37 +322,19 @@ function EducationSection() {
   );
 }
 
-const skills = [
-  {
-    icon: Code,
-    title: 'Frontend',
-    description: 'React, Next.js, TypeScript, Tailwind CSS, HTML5, CSS3',
-  },
-  {
-    icon: Server,
-    title: 'Backend',
-    description: 'Node.js, Express, Python, Flask, Firebase, SQL, NoSQL',
-  },
-  {
-    icon: Palette,
-    title: 'UI/UX Design',
-    description: 'Figma, Adobe XD, User Research, Wireframing, Prototyping',
-  },
-  {
-    icon: Smartphone,
-    title: 'Mobile',
-    description: 'React Native, Responsive Design',
-  },
-  {
-    icon: Database,
-    title: 'Databases',
-    description: 'PostgreSQL, MongoDB, Firebase Firestore',
-  },
-  {
-    icon: GitMerge,
-    title: 'DevOps & Tools',
-    description: 'Git, GitHub, Docker, Vercel, CI/CD',
-  },
+const individualSkills = [
+    { name: 'React', icon: <ReactIcon /> },
+    { name: 'Next.js', icon: <NextjsIcon /> },
+    { name: 'TypeScript', icon: <TypeScriptIcon /> },
+    { name: 'Tailwind CSS', icon: <TailwindCssIcon /> },
+    { name: 'Node.js', icon: <NodejsIcon /> },
+    { name: 'Firebase', icon: <FirebaseIcon /> },
+    { name: 'PostgreSQL', icon: <PostgreSqlIcon /> },
+    { name: 'MongoDB', icon: <MongoDbIcon /> },
+    { name: 'Git', icon: <GitIcon /> },
+    { name: 'GitHub', icon: <Github className="h-full w-full" /> },
+    { name: 'Docker', icon: <DockerIcon /> },
+    { name: 'Figma', icon: <FigmaIcon /> },
 ];
 
 function SkillsSection() {
@@ -278,7 +342,7 @@ function SkillsSection() {
     <section id="skills" className="w-full bg-secondary py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in duration-1000"
+          classNameIn="animate-in fade-in duration-750"
           classNameOut="animate-out fade-out duration-750 opacity-0"
           className="mb-12 text-center"
         >
@@ -289,27 +353,22 @@ function SkillsSection() {
             A look at the technologies and tools I work with.
           </p>
         </AnimatedOnScroll>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {skills.map((skill, index) => (
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          {individualSkills.map((skill, index) => (
             <AnimatedOnScroll
-              key={skill.title}
-              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-1000"
+              key={skill.name}
+              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-750"
               classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-750 opacity-0"
-              style={{ animationDelay: `${index * 150}ms` }}
+              style={{ animationDelay: `${index * 75}ms` }}
               className="h-full"
             >
               <Card 
-                className="text-center transition-transform duration-300 hover:-translate-y-2 h-full"
+                className="flex h-full flex-col items-center justify-center p-4 text-center transition-transform duration-300 hover:-translate-y-2"
               >
-                <CardHeader>
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <skill.icon className="h-8 w-8" />
-                  </div>
-                  <CardTitle className="mt-4 font-headline">{skill.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{skill.description}</p>
-                </CardContent>
+                <div className="flex h-16 w-16 items-center justify-center text-primary">
+                    {skill.icon}
+                </div>
+                <p className="mt-2 text-sm font-semibold">{skill.name}</p>
               </Card>
             </AnimatedOnScroll>
           ))}
@@ -324,7 +383,7 @@ function MyWorkSection() {
     <section id="my-work" className="w-full py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in duration-1000"
+          classNameIn="animate-in fade-in duration-750"
           classNameOut="animate-out fade-out duration-750 opacity-0"
           className="mb-12 text-center"
         >
@@ -346,7 +405,7 @@ function ContactSection() {
     <section id="contact" className="w-full bg-secondary py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in duration-1000"
+          classNameIn="animate-in fade-in duration-750"
           classNameOut="animate-out fade-out duration-750 opacity-0"
           className="mx-auto max-w-3xl text-center"
         >
@@ -360,7 +419,7 @@ function ContactSection() {
         
         <div className="mx-auto mt-12 grid max-w-5xl gap-12 md:grid-cols-2">
             <AnimatedOnScroll
-                classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000 delay-200"
+                classNameIn="animate-in fade-in slide-in-from-left-16 duration-750 delay-200"
                 classNameOut="animate-out fade-out slide-out-to-left-16 duration-750 opacity-0"
                 className="flex flex-col justify-center space-y-8"
             >
@@ -396,7 +455,7 @@ function ContactSection() {
             </AnimatedOnScroll>
 
             <AnimatedOnScroll
-                classNameIn="animate-in fade-in slide-in-from-right-16 duration-1000 delay-400"
+                classNameIn="animate-in fade-in slide-in-from-right-16 duration-750 delay-400"
                 classNameOut="animate-out fade-out slide-out-to-right-16 duration-750 opacity-0"
             >
                 <Card className="h-full">
