@@ -77,15 +77,10 @@ export default {
             height: '0',
           },
         },
-        radiate: {
-          '0%': { transform: 'scale(1)', opacity: '0.6' },
-          '100%': { transform: 'scale(1.4)', opacity: '0' },
-        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        radiate: 'radiate 1.5s ease-out infinite',
       },
       backgroundImage: {
         'grid-pattern': "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='hsl(var(--primary))' stroke-opacity='0.2'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e\")",
