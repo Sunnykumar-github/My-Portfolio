@@ -192,7 +192,7 @@ function AboutSection() {
               <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-1000 group-data-[intersecting=true]:opacity-75 group-data-[intersecting=true]:bg-primary/30 group-data-[intersecting=true]:blur-4xl"></div>
               
               <Image
-                  src="https://placehold.co/400x400.png"
+                  src="/about.png"
                   alt="Sunny Kumar"
                   width={400}
                   height={400}
