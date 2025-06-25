@@ -26,8 +26,8 @@ const projects = [
   {
     id: 2,
     title: 'BIT Cycles Rental',
-    description: 'A sleek and intuitive mobile app for organizing tasks and boosting productivity.',
-    longDescription: 'Designed and built a cross-platform mobile app using React Native. Features include drag-and-drop task reordering, push notifications, and collaboration tools. Focused on creating a seamless and engaging user experience.',
+    description: 'A responsive web app for on-campus bicycle rentals with a streamlined booking system, mobile-first UI, and real-time form validation',
+    longDescription: 'Designed and built a responsive web app for on-campus bicycle rentals at ₹50/day. Features include a streamlined booking system, mobile-first UI, and real-time form validation. Enabled over 100 rentals till now with fast load times and intuitive user experience.',
     imageUrl: 'https://placehold.co/600x400.png',
     tags: ['Mobile', 'UI/UX'],
     liveUrl: '#',
@@ -37,17 +37,17 @@ const projects = [
   {
     id: 3,
     title: 'Portfolio Website',
-    description: 'An interactive dashboard for visualizing complex datasets in real-time.',
-    longDescription: 'Created a powerful data visualization tool using D3.js and React. The dashboard allows users to explore large datasets through interactive charts and graphs. The backend is powered by a Python/Flask API that processes and serves the data.',
+    description: 'A sleek, modern portfolio built with Next.js, React, and Tailwind CSS. It features smooth animations, a dark mode theme, and an interactive project showcase, all wrapped in a fully responsive design.',
+    longDescription: 'This portfolio is a dynamic, responsive website designed to showcase my skills. Built with Next.js and React, it leverages Tailwind CSS for styling and ShadCN for UI components. It includes features like a dark mode toggle, smooth on-scroll animations, and an interactive project showcase, demonstrating a modern approach to web development and design.',
     imageUrl: 'https://placehold.co/600x400.png',
-    tags: ['Web App', 'Backend'],
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'UI/UX'],
     liveUrl: '#',
     sourceUrl: '#',
     hint: 'portfolio website'
   },
 ];
 
-const allTags = ['All', 'Web App', 'Mobile', 'UI/UX', 'Backend'];
+const allTags = ['All', 'Web App', 'Mobile', 'UI/UX', 'Backend', 'Next.js', 'React', 'Tailwind CSS'];
 
 export function ProjectShowcase() {
     const [selectedTag, setSelectedTag] = useState('All');
