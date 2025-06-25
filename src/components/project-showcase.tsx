@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import Link from 'next/link';
 import { ExternalLink, Github } from 'lucide-react';
+import { AnimatedOnScroll } from './animated-on-scroll';
 
 const projects = [
   {
@@ -84,65 +85,71 @@ export function ProjectShowcase() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 {filteredProjects.map((project, index) => (
-                    <Dialog key={project.id}>
-                        <Card 
-                            className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-in fade-in zoom-in-95 duration-500"
-                            style={{ animationDelay: `${index * 150}ms` }}
-                        >
-                            <CardHeader className="p-0">
-                                <div className="relative overflow-hidden h-60">
-                                    <Image
-                                        src={project.imageUrl}
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                        data-ai-hint={project.hint}
-                                    />
-                                </div>
-                            </CardHeader>
-                            <CardContent className="p-6">
-                                <CardTitle className="font-headline text-xl mb-2">{project.title}</CardTitle>
-                                <CardDescription>{project.description}</CardDescription>
-                                <div className="mt-4 flex flex-wrap gap-2">
-                                    {project.tags.map(tag => (
-                                        <Badge key={tag} variant="outline">{tag}</Badge>
-                                    ))}
-                                </div>
-                            </CardContent>
-                            <CardFooter className="p-6 pt-0">
-                                <DialogTrigger asChild>
-                                    <Button variant="outline" className="w-full">View Details</Button>
-                                </DialogTrigger>
-                            </CardFooter>
-                        </Card>
+                    <AnimatedOnScroll
+                        key={project.id}
+                        classNameIn="animate-in fade-in slide-in-from-left-16 duration-700"
+                        classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+                        className={`delay-[${index * 150}ms]`}
+                    >
+                        <Dialog>
+                            <Card 
+                                className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                            >
+                                <CardHeader className="p-0">
+                                    <div className="relative overflow-hidden h-60">
+                                        <Image
+                                            src={project.imageUrl}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                            data-ai-hint={project.hint}
+                                        />
+                                    </div>
+                                </CardHeader>
+                                <CardContent className="p-6">
+                                    <CardTitle className="font-headline text-xl mb-2">{project.title}</CardTitle>
+                                    <CardDescription>{project.description}</CardDescription>
+                                    <div className="mt-4 flex flex-wrap gap-2">
+                                        {project.tags.map(tag => (
+                                            <Badge key={tag} variant="outline">{tag}</Badge>
+                                        ))}
+                                    </div>
+                                </CardContent>
+                                <CardFooter className="p-6 pt-0">
+                                    <DialogTrigger asChild>
+                                        <Button variant="outline" className="w-full">View Details</Button>
+                                    </DialogTrigger>
+                                </CardFooter>
+                            </Card>
 
-                        <DialogContent className="sm:max-w-[625px]">
-                            <DialogHeader>
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.tags.map(tag => (
-                                        <Badge key={tag} variant="secondary">{tag}</Badge>
-                                    ))}
+                            <DialogContent className="sm:max-w-[625px]">
+                                <DialogHeader>
+                                    <div className="flex flex-wrap gap-2 mb-4">
+                                        {project.tags.map(tag => (
+                                            <Badge key={tag} variant="secondary">{tag}</Badge>
+                                        ))}
+                                    </div>
+                                    <DialogTitle className="font-headline text-2xl">{project.title}</DialogTitle>
+                                    <DialogDescription>{project.longDescription}</DialogDescription>
+                                </DialogHeader>
+                                <div className="relative my-4 h-64 w-full rounded-md overflow-hidden">
+                                    <Image src={project.imageUrl} alt={project.title} fill className="object-cover" data-ai-hint={project.hint}/>
                                 </div>
-                                <DialogTitle className="font-headline text-2xl">{project.title}</DialogTitle>
-                                <DialogDescription>{project.longDescription}</DialogDescription>
-                            </DialogHeader>
-                            <div className="relative my-4 h-64 w-full rounded-md overflow-hidden">
-                                <Image src={project.imageUrl} alt={project.title} fill className="object-cover" data-ai-hint={project.hint}/>
-                            </div>
-                            <div className="flex gap-4">
-                                <Button asChild className="flex-1">
-                                    <Link href={project.liveUrl} target="_blank">
-                                        <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
-                                    </Link>
-                                </Button>
-                                <Button asChild variant="secondary" className="flex-1">
-                                    <Link href={project.sourceUrl} target="_blank">
-                                        <Github className="mr-2 h-4 w-4" /> Source Code
-                                    </Link>
-                                </Button>
-                            </div>
-                        </DialogContent>
-                    </Dialog>
+                                <div className="flex gap-4">
+                                    <Button asChild className="flex-1">
+                                        <Link href={project.liveUrl} target="_blank">
+                                            <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                                        </Link>
+                                    </Button>
+                                    <Button asChild variant="secondary" className="flex-1">
+                                        <Link href={project.sourceUrl} target="_blank">
+                                            <Github className="mr-2 h-4 w-4" /> Source Code
+                                        </Link>
+                                    </Button>
+                                </div>
+                            </DialogContent>
+                        </Dialog>
+                    </AnimatedOnScroll>
                 ))}
             </div>
         </div>
