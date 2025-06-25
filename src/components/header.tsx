@@ -8,9 +8,8 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import React from 'react';
 
 const routes = [
-  { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
-  { href: '#education', label: 'Education' },
+  { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
   { href: '#my-work', label: 'My Work' },
   { href: '#contact', label: 'Contact' },
