@@ -1,5 +1,6 @@
+"use client";
 
-
+import { useState, useEffect } from 'react';
 import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Twitter, Lightbulb, MessageSquareText, Puzzle, Users, ArrowRight, Phone, FileDown, Database, DatabaseZap, CalendarDays, FileText, Mic, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
@@ -153,6 +154,50 @@ const MsOfficeIcon = () => (
     </svg>
 )
 
+function TypingEffect() {
+    const [text, setText] = useState("");
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [loopNum, setLoopNum] = useState(0);
+
+    const textToType = "Sunny Kumar";
+    const typingPeriod = 150;
+    const deletingPeriod = 75;
+    const pausePeriod = 2000;
+
+    useEffect(() => {
+        const handleTyping = () => {
+            if (isDeleting) {
+                if (text.length > 0) {
+                    setText(prev => prev.substring(0, prev.length - 1));
+                } else {
+                    setIsDeleting(false);
+                    setLoopNum(prev => prev + 1);
+                }
+            } else {
+                if (text.length < textToType.length) {
+                    setText(prev => textToType.substring(0, prev.length + 1));
+                } else {
+                    setTimeout(() => setIsDeleting(true), pausePeriod);
+                }
+            }
+        };
+
+        if (isDeleting || text.length < textToType.length) {
+            const timer = setTimeout(handleTyping, isDeleting ? deletingPeriod : typingPeriod);
+            return () => clearTimeout(timer);
+        }
+
+    }, [text, isDeleting, loopNum]);
+
+    return (
+        <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200 flex justify-center items-center h-20 sm:h-24 md:h-28 lg:h-32">
+            <span>{text}</span>
+            <span className="text-primary animate-pulse ml-1">|</span>
+        </h1>
+    );
+}
+
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -176,10 +221,10 @@ function HeroSection() {
     <section id="home" className="relative h-[80vh] min-h-[600px] w-full flex items-center justify-center text-center overflow-hidden">
       <div className="absolute inset-0 z-[-1] bg-background">
         <div 
-          className="absolute inset-0 opacity-30 dark:opacity-20" 
+          className="absolute inset-0 opacity-50 dark:opacity-40" 
           style={{
             backgroundImage:
-              "radial-gradient(ellipse 80% 80% at 50% -20%, hsl(var(--primary) / 0.3), transparent)",
+              "radial-gradient(ellipse 50% 50% at 50% 50%, hsl(var(--primary) / 0.4), transparent 80%)",
           }}
         ></div>
         <div className="absolute inset-0 bg-grid-pattern opacity-10 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
@@ -193,9 +238,7 @@ function HeroSection() {
               Available for freelance work
             </Badge>
           </div>
-          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
-            Sunny Kumar
-          </h1>
+          <TypingEffect />
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-400">
             Software Engineer and Full-Stack Developer crafting next-gen web experiences blending code, creativity and AI.
           </p>
@@ -427,8 +470,6 @@ const skillsData = [
       { name: 'JavaScript', icon: <JavaScriptIcon />, className: "bg-[#F7DF1E] text-black" },
       { name: 'Python', icon: <PythonIcon />, className: "text-[#3776AB]" },
       { name: 'HTML', icon: <HtmlIcon />, className: "text-[#E34F26]" },
-      { name: 'SQL', icon: <Database className="h-full w-full" />, className: "text-primary" },
-      { name: 'NoSQL', icon: <DatabaseZap className="h-full w-full" />, className: "text-primary" },
       { name: 'TypeScript', icon: <TypeScriptIcon />, className: "bg-[#3178C6] text-white" },
     ],
   },
@@ -449,6 +490,8 @@ const skillsData = [
         { name: 'GitHub', icon: <Github className="h-full w-full" />, className: "text-foreground" },
         { name: 'Git', icon: <GitIcon />, className: "text-[#F05032]" },
         { name: 'Postman', icon: <PostmanIcon />, className: "text-[#FF6C37]" },
+        { name: 'SQL', icon: <Database className="h-full w-full" />, className: "text-primary" },
+        { name: 'NoSQL', icon: <DatabaseZap className="h-full w-full" />, className: "text-primary" },
         { name: 'PostgreSQL', icon: <PostgreSqlIcon />, className: "text-[#4169E1]" },
         { name: 'Docker', icon: <DockerIcon />, className: "text-[#2496ED]" },
         { name: 'Figma', icon: <FigmaIcon />, className: "" },
