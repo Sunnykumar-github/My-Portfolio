@@ -1,5 +1,6 @@
 
-import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Twitter, Lightbulb, MessageSquareText, Puzzle, Users, ArrowRight, Phone, FileDown } from 'lucide-react';
+
+import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Twitter, Lightbulb, MessageSquareText, Puzzle, Users, ArrowRight, Phone, FileDown, Database, DatabaseZap, CalendarDays, FileText, Mic, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { Header } from '@/components/header';
@@ -86,6 +87,69 @@ const FigmaIcon = () => (
     <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
         <title>Figma</title>
         <path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zM8.25 12a3.75 3.75 0 0 1 3.75-3.75V12h-3.75zm0 3.75h3.75v3.75a3.75 3.75 0 0 1-3.75-3.75zM12 8.25A3.75 3.75 0 0 1 15.75 12h-3.75V8.25zm0 3.75h3.75a3.75 3.75 0 0 1-3.75 3.75v-3.75zM8.25 8.25a3.75 3.75 0 0 1 3.75-3.75v3.75h-3.75z"/>
+    </svg>
+)
+
+const CIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>C</title>
+        <path d="M12.28.026C5.55-.22 0 5.074 0 11.83c0 6.63 5.373 12 12 12s12-5.373 12-12c0-6.756-5.55-12.05-12.28-11.804zm.006 21.575c-5.403 0-9.784-4.38-9.784-9.782S6.822 2.235 12.227 2.235c5.38 0 9.79 4.29 9.85 9.64H17.84c-.06-3.05-2.52-5.51-5.57-5.51-3.12 0-5.65 2.53-5.65 5.65s2.53 5.65 5.65 5.65c3.05 0 5.51-2.46 5.57-5.51h4.237c-.06 5.35-4.47 9.64-9.85 9.64z"/>
+    </svg>
+)
+
+const CppIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>C++</title>
+        <path d="M14.619 1.287L4.053 8.412v7.176l10.566 7.125 10.565-7.125V8.412L14.619 1.287zM14.21 3.86l8.23 5.545v3.488l-4.223 2.848v-3.48l-4.007-2.7-4.008 2.7v3.48l-4.222-2.848V9.405l8.23-5.545z M19.743 14.505h1.5v1.5h-1.5v1.5h-1.5v-1.5h-1.5v-1.5h1.5v-1.5h1.5v1.5zm3 0h1.5v1.5h-1.5v1.5h-1.5v-1.5h-1.5v-1.5h1.5v-1.5h1.5v1.5z"/>
+    </svg>
+)
+
+const JavaIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Java</title>
+        <path d="M17.16 19.34c-.26 1.48-1.03 2.2-2.14 2.39a2.76 2.76 0 01-2.4-1.2l.2-.1c.56.55 1.3.8 1.95.53.86-.33.9-1.2.93-1.83a22.5 22.5 0 00-.7-4.88c-.62-2.14-1.2-3.8-1.2-3.8s-.03.04-.1.17c-.52 1.05-1.14 2.27-1.14 2.27s-1.8-2.9-1.8-2.9C10.7 8.04 10.6 6.4 10.6 6.4c1.6 0 2.25.7 2.25.7s.17-.37.35-.74S14.15 5 14.15 5s.4.5.65 1.1c.32.74.3 1.32.3 1.32s.67-1.14 1.32-2.25c.65-1.1 1.05-1.29 1.05-1.29s-.4 1.29-.4 2.28c0 .99.17 1.83.17 1.83s.77-1.37 1.17-1.87c.4-.5.56-.63.56-.63s-.68.87-.93 1.63c-.25.76.2 1.4.3 1.5.34.4.65 1.14.65 1.14s-.73-1.63-1.72-2.67M8.3 19.4c0-2.3 1.2-3.13 1.9-3.95.7-.8 1.05-1.32 1.05-2.06 0-.8-.43-1.31-.96-1.58-.53-.26-1.12-.23-1.5.06-.38.3-.58.73-.6 1.14a16.8 16.8 0 01-.1 1.76c0 .7-.2 1.35-1.4 1.35-1.1 0-1.42-.6-1.42-1.3s0-1.1.03-1.6c.1-1.7.9-2.73 2.5-2.73a2.43 2.43 0 012.3 1.67c.1.34.13.7.13 1.02 0 1.1-.5 2.05-1.2 2.9-.68.83-1.9 1.8-1.9 4.14"/>
+    </svg>
+)
+
+const PythonIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Python</title>
+        <path d="M11.979 16.989c-2.339 0-4.25-1.911-4.25-4.25s1.911-4.25 4.25-4.25h4.25v2.125h-4.25c-1.17 0-2.125.955-2.125 2.125s.955 2.125 2.125 2.125v4.25H11.979zm.021-12.739c2.339 0 4.25 1.911 4.25 4.25s-1.911 4.25-4.25 4.25h-4.25V8.25h4.25c1.17 0 2.125-.955 2.125-2.125S13.17 4 11.999 4V0h.001zM11.999 20h.021v4h-4.271v-4.25h4.25zm-.021 0v-4.25h-4.25V20h4.25z" />
+    </svg>
+)
+
+const HtmlIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>HTML5</title>
+        <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622-13.42-.003.522 6.173h8.926l-.336 3.774-2.637.734-2.64-1.18.13-1.444h-2.133l-.264 2.955L11.995 18l5.24-.002.502-5.625h-10.21z"/>
+    </svg>
+)
+
+const VscodeIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Visual Studio Code</title>
+        <path d="M23.15 2.587L18.428.262a.803.803 0 0 0-.802.132l-5.463 4.54-4.21-3.498a.803.803 0 0 0-.946-.04L.842 6.752a.803.803 0 0 0-.132.802l3.498 7.428-3.498 7.428a.803.803 0 0 0 .132.802l6.165 5.347a.803.803 0 0 0 .946-.04l4.21-3.498 5.463 4.54a.803.803 0 0 0 .802.132l4.723-2.325a.803.803 0 0 0 .453-.722V3.309a.803.803 0 0 0-.453-.722zM15.42 16.59l-4.59-3.815 4.59-3.815V16.59zm-9.33-4.59l3.498-7.428 3.498 7.428-3.498 7.428-3.498-7.428z"/>
+    </svg>
+)
+
+const PostmanIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Postman</title>
+        <path d="M20.25 12a8.25 8.25 0 1 1-16.5 0 8.25 8.25 0 0 1 16.5 0Z M12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12Z M12 5.25a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5Z M12 6.75a5.25 5.25 0 1 0 0 10.5 5.25 5.25 0 0 0 0-10.5Z m-2.062 2.625c.414-.415.96-.656 1.547-.656h1.03c.825 0 1.5.675 1.5 1.5v1.031c0 .587-.24 1.133-.656 1.547l-1.032 1.03c-.414.415-.96.657-1.546.657H9.75c-.825 0-1.5-.675-1.5-1.5V9.75c0-.825.675-1.5 1.5-1.5h.75v1.125h-1.03c-.206 0-.375.169-.375.375v1.031c0 .206.169.375.375.375h1.031c.206 0 .375-.169.375-.375V9.375Z" />
+    </svg>
+)
+
+const PowerBiIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Microsoft Power BI</title>
+        <path d="M12.31 0H2.47v24h9.84v-7.92h7.22V8.45h-7.22V0zM3.86 22.6V1.4h7.06v7.05h7.22v6.62H10.9v7.53H3.85z"/>
+    </svg>
+)
+
+const MsOfficeIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Microsoft Office</title>
+        <path d="M2.872 3.51l-.707.396v16.188l.707.396 9.47-5.467V3.51l-9.47-5.467zm.83 1.053l7.922 4.573v5.308l-7.922 4.573V4.563zM14.653 2.11l-3.048 1.76v16.26l3.048 1.76 9.47-5.467V7.577l-9.47-5.467zm.83 15.59l-1.328-.767V5.067l1.328-.767 7.922 4.573v6.303l-7.922 4.573z"/>
     </svg>
 )
 
@@ -355,44 +419,51 @@ function EducationSection() {
 
 const skillsData = [
   {
-    category: "Programming Languages",
+    category: "Languages",
     skills: [
+      { name: 'C', icon: <CIcon />, className: "text-[#A8B9CC]" },
+      { name: 'C++', icon: <CppIcon />, className: "text-[#00599C]" },
+      { name: 'Java', icon: <JavaIcon />, className: "text-[#007396]" },
       { name: 'JavaScript', icon: <JavaScriptIcon />, className: "bg-[#F7DF1E] text-black" },
+      { name: 'Python', icon: <PythonIcon />, className: "text-[#3776AB]" },
+      { name: 'HTML', icon: <HtmlIcon />, className: "text-[#E34F26]" },
+      { name: 'SQL', icon: <Database className="h-full w-full" />, className: "text-primary" },
+      { name: 'NoSQL', icon: <DatabaseZap className="h-full w-full" />, className: "text-primary" },
       { name: 'TypeScript', icon: <TypeScriptIcon />, className: "bg-[#3178C6] text-white" },
     ],
   },
   {
-    category: "Frontend Frameworks & Libraries",
+    category: "Frameworks",
     skills: [
-      { name: 'React', icon: <ReactIcon />, className: "text-[#61DAFB]" },
+      { name: 'React.js', icon: <ReactIcon />, className: "text-[#61DAFB]" },
       { name: 'Next.js', icon: <NextjsIcon />, className: "text-foreground" },
       { name: 'Tailwind CSS', icon: <TailwindCssIcon />, className: "text-[#38B2AC]" },
-    ],
-  },
-  {
-    category: "Backend & Databases",
-    skills: [
       { name: 'Node.js', icon: <NodejsIcon />, className: "text-[#339933]" },
-      { name: 'PostgreSQL', icon: <PostgreSqlIcon />, className: "text-[#4169E1]" },
       { name: 'MongoDB', icon: <MongoDbIcon />, className: "text-[#47A248]" },
     ],
   },
   {
-    category: "Tools & Platforms",
+    category: "Tools",
     skills: [
-      { name: 'Git', icon: <GitIcon />, className: "text-[#F05032]" },
-      { name: 'GitHub', icon: <Github className="h-full w-full" />, className: "text-foreground" },
-      { name: 'Docker', icon: <DockerIcon />, className: "text-[#2496ED]" },
-      { name: 'Figma', icon: <FigmaIcon />, className: "" },
+        { name: 'VS Code', icon: <VscodeIcon />, className: "text-[#007ACC]" },
+        { name: 'GitHub', icon: <Github className="h-full w-full" />, className: "text-foreground" },
+        { name: 'Git', icon: <GitIcon />, className: "text-[#F05032]" },
+        { name: 'Postman', icon: <PostmanIcon />, className: "text-[#FF6C37]" },
+        { name: 'PostgreSQL', icon: <PostgreSqlIcon />, className: "text-[#4169E1]" },
+        { name: 'Docker', icon: <DockerIcon />, className: "text-[#2496ED]" },
+        { name: 'Figma', icon: <FigmaIcon />, className: "" },
+        { name: 'Power BI', icon: <PowerBiIcon />, className: "text-[#F2C811]" },
+        { name: 'MS Office', icon: <MsOfficeIcon />, className: "text-[#D83B01]" },
     ]
   },
   {
     category: "Soft Skills",
     skills: [
-      { name: 'Communication', icon: <MessageSquareText className="h-full w-full" />, className: "text-primary" },
-      { name: 'Teamwork', icon: <Users className="h-full w-full" />, className: "text-primary" },
-      { name: 'Problem Solving', icon: <Puzzle className="h-full w-full" />, className: "text-primary" },
-      { name: 'Creativity', icon: <Lightbulb className="h-full w-full" />, className: "text-primary" },
+        { name: 'Leadership', icon: <Users className="h-full w-full" />, className: "text-primary" },
+        { name: 'Event Management', icon: <CalendarDays className="h-full w-full" />, className: "text-primary" },
+        { name: 'Content Writing', icon: <FileText className="h-full w-full" />, className: "text-primary" },
+        { name: 'Public Speaking', icon: <Mic className="h-full w-full" />, className: "text-primary" },
+        { name: 'Time Management', icon: <Clock className="h-full w-full" />, className: "text-primary" },
     ]
   }
 ];
