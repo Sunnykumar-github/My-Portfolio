@@ -16,6 +16,7 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <AboutSection />
+        <EducationSection />
         <SkillsSection />
         <MyWorkSection />
         <ContactSection />
@@ -97,15 +98,6 @@ function AboutSection() {
                     <p className="text-muted-foreground">3+ years as a professional developer, working with startups and established companies to create impactful digital experiences.</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <GraduationCap className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-headline text-xl font-semibold">Education</h3>
-                    <p className="text-muted-foreground">B.S. in Computer Science from the University of Technology, where I honed my problem-solving and analytical skills.</p>
-                  </div>
-                </div>
             </div>
           </div>
         </AnimatedOnScroll>
@@ -130,6 +122,65 @@ function AboutSection() {
             </div>
           </div>
         </AnimatedOnScroll>
+      </div>
+    </section>
+  );
+}
+
+function EducationSection() {
+  return (
+    <section id="education" className="w-full py-20 md:py-32 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
+        <AnimatedOnScroll
+          classNameIn="animate-in fade-in duration-1000"
+          classNameOut="animate-out fade-out duration-500 opacity-0"
+          className="mb-12 text-center"
+        >
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+            Education
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            My academic journey and qualifications.
+          </p>
+        </AnimatedOnScroll>
+
+        <div className="relative mx-auto max-w-3xl">
+          <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-border"></div>
+          
+          <AnimatedOnScroll
+            classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000"
+            classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+            className="relative mb-12 flex w-full items-start"
+          >
+            <div className="absolute left-1/2 top-4 h-3 w-3 -translate-x-1/2 rounded-full bg-primary ring-8 ring-background"></div>
+            <Card className="w-[calc(50%-2rem)]">
+              <CardHeader>
+                <CardTitle className="font-headline">B.S. in Computer Science</CardTitle>
+                <p className="text-muted-foreground">University of Technology</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Graduated with honors, focusing on software development and artificial intelligence. Completed a final year project on machine learning algorithms.</p>
+              </CardContent>
+            </Card>
+          </AnimatedOnScroll>
+
+          <AnimatedOnScroll
+            classNameIn="animate-in fade-in slide-in-from-right-16 duration-1000 delay-200"
+            classNameOut="animate-out fade-out slide-out-to-right-16 duration-500 opacity-0"
+            className="relative mb-12 flex w-full justify-end items-start"
+          >
+            <div className="absolute left-1/2 top-4 h-3 w-3 -translate-x-1/2 rounded-full bg-primary ring-8 ring-background"></div>
+             <Card className="w-[calc(50%-2rem)]">
+              <CardHeader>
+                <CardTitle className="font-headline">Web Development Bootcamp</CardTitle>
+                 <p className="text-muted-foreground">Code Academy</p>
+              </CardHeader>
+              <CardContent>
+                 <p className="text-muted-foreground">An intensive 12-week program covering full-stack development with a focus on MERN stack (MongoDB, Express, React, Node.js).</p>
+              </CardContent>
+            </Card>
+          </AnimatedOnScroll>
+        </div>
       </div>
     </section>
   );
