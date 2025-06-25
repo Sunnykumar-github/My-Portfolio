@@ -1,5 +1,5 @@
 
-import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Twitter, Lightbulb, MessageSquareText, Puzzle, Users } from 'lucide-react';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { Header } from '@/components/header';
@@ -26,6 +26,13 @@ const NextjsIcon = () => (
     <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
         <title>Next.js</title>
         <path d="M9.041 12.836L14.959 7.164v10l-5.918-5.672zM15.5 4l-11.25 8 11.25 8V4z" />
+    </svg>
+)
+
+const JavaScriptIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-full w-full">
+        <rect width="24" height="24" rx="3" ry="3" fill="#F7DF1E"/>
+        <path d="M7.76 17.2V8.71H10.88C11.66 8.71 12.23 8.79 12.59 8.95C12.96 9.11 13.23 9.38 13.41 9.76C13.59 10.13 13.68 10.58 13.68 11.1C13.68 11.63 13.58 12.08 13.38 12.45C13.18 12.82 12.9 13.1 12.54 13.28C12.18 13.46 11.72 13.55 11.16 13.55H9.42V17.2H7.76ZM9.42 12.22H11C11.4 12.22 11.7 12.16 11.9 12.04C12.1 11.92 12.2 11.73 12.2 11.47C12.2 11.21 12.11 11.02 11.93 10.9C11.75 10.78 11.47 10.72 11.09 10.72H9.42V12.22ZM15.42 17.38C14.7 17.38 14.12 17.23 13.68 16.93C13.24 16.63 12.95 16.2 12.81 15.64H14.41C14.44 15.86 14.54 16.03 14.71 16.15C14.88 16.27 15.11 16.33 15.39 16.33C15.81 16.33 16.02 16.22 16.02 15.99C16.02 15.84 15.95 15.72 15.81 15.63C15.67 15.54 15.4 15.44 14.98 15.33L14.43 15.2C13.89 15.06 13.46 14.84 13.14 14.54C12.82 14.24 12.66 13.83 12.66 13.31C12.66 12.86 12.79 12.48 13.05 12.17C13.31 11.86 13.69 11.65 14.19 11.55C14.69 11.45 15.23 11.4 15.81 11.4C16.45 11.4 16.98 11.53 17.4 11.79C17.82 12.05 18.06 12.43 18.12 12.93H16.52C16.48 12.64 16.34 12.45 16.1 12.36C15.86 12.27 15.58 12.22 15.26 12.22C14.9 12.22 14.72 12.3 14.72 12.46C14.72 12.58 14.77 12.68 14.87 12.76C14.97 12.84 15.15 12.92 15.41 12.99L16.13 13.18C16.85 13.38 17.36 13.66 17.66 14.02C17.96 14.38 18.11 14.84 18.11 15.4C18.11 15.96 17.96 16.43 17.66 16.81C17.36 17.19 16.9 17.38 16.28 17.38H15.42Z" fill="#000"/>
     </svg>
 )
 
@@ -127,19 +134,19 @@ function HeroSection() {
 
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center space-y-4">
-          <div className="animate-in fade-in slide-in-from-bottom-3 duration-1000">
+          <div className="animate-in fade-in slide-in-from-bottom-3 duration-750">
             <Badge variant="secondary">
               Available for freelance work
             </Badge>
           </div>
-          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
+          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-in fade-in slide-in-from-bottom-4 duration-750 delay-200">
             John Doe
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-400">
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl animate-in fade-in slide-in-from-bottom-5 duration-750 delay-400">
             A creative Full-Stack Developer crafting modern, responsive, and
             performant web applications.
           </p>
-          <div className="mt-8 flex justify-center gap-4 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-600">
+          <div className="mt-8 flex justify-center gap-4 animate-in fade-in slide-in-from-bottom-6 duration-750 delay-600">
             <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
               <Link href="#contact">Get in Touch</Link>
             </Button>
@@ -322,19 +329,49 @@ function EducationSection() {
   );
 }
 
-const individualSkills = [
-    { name: 'React', icon: <ReactIcon /> },
-    { name: 'Next.js', icon: <NextjsIcon /> },
-    { name: 'TypeScript', icon: <TypeScriptIcon /> },
-    { name: 'Tailwind CSS', icon: <TailwindCssIcon /> },
-    { name: 'Node.js', icon: <NodejsIcon /> },
-    { name: 'Firebase', icon: <FirebaseIcon /> },
-    { name: 'PostgreSQL', icon: <PostgreSqlIcon /> },
-    { name: 'MongoDB', icon: <MongoDbIcon /> },
-    { name: 'Git', icon: <GitIcon /> },
-    { name: 'GitHub', icon: <Github className="h-full w-full" /> },
-    { name: 'Docker', icon: <DockerIcon /> },
-    { name: 'Figma', icon: <FigmaIcon /> },
+const skillsData = [
+  {
+    category: "Programming Languages",
+    skills: [
+      { name: 'JavaScript', icon: <JavaScriptIcon /> },
+      { name: 'TypeScript', icon: <TypeScriptIcon /> },
+    ],
+  },
+  {
+    category: "Frontend Frameworks & Libraries",
+    skills: [
+      { name: 'React', icon: <ReactIcon /> },
+      { name: 'Next.js', icon: <NextjsIcon /> },
+      { name: 'Tailwind CSS', icon: <TailwindCssIcon /> },
+    ],
+  },
+  {
+    category: "Backend & Databases",
+    skills: [
+      { name: 'Node.js', icon: <NodejsIcon /> },
+      { name: 'Firebase', icon: <FirebaseIcon /> },
+      { name: 'PostgreSQL', icon: <PostgreSqlIcon /> },
+      { name: 'MongoDB', icon: <MongoDbIcon /> },
+    ],
+  },
+  {
+    category: "Tools & Platforms",
+    skills: [
+      { name: 'Git', icon: <GitIcon /> },
+      { name: 'GitHub', icon: <Github className="h-full w-full" /> },
+      { name: 'Docker', icon: <DockerIcon /> },
+      { name: 'Figma', icon: <FigmaIcon /> },
+    ]
+  },
+  {
+    category: "Soft Skills",
+    skills: [
+      { name: 'Communication', icon: <MessageSquareText className="h-full w-full" /> },
+      { name: 'Teamwork', icon: <Users className="h-full w-full" /> },
+      { name: 'Problem Solving', icon: <Puzzle className="h-full w-full" /> },
+      { name: 'Creativity', icon: <Lightbulb className="h-full w-full" /> },
+    ]
+  }
 ];
 
 function SkillsSection() {
@@ -344,39 +381,53 @@ function SkillsSection() {
         <AnimatedOnScroll
           classNameIn="animate-in fade-in duration-750"
           classNameOut="animate-out fade-out duration-750 opacity-0"
-          className="mb-12 text-center"
+          className="mb-16 text-center"
         >
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             My Skills
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            A look at the technologies and tools I work with.
+            A look at the technologies, tools, and abilities I bring to the table.
           </p>
         </AnimatedOnScroll>
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {individualSkills.map((skill, index) => (
-            <AnimatedOnScroll
-              key={skill.name}
-              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-750"
-              classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-750 opacity-0"
-              style={{ animationDelay: `${index * 75}ms` }}
-              className="h-full"
-            >
-              <Card 
-                className="flex h-full flex-col items-center justify-center p-4 text-center transition-transform duration-300 hover:-translate-y-2"
+        
+        <div className="space-y-16">
+          {skillsData.map((category) => (
+            <div key={category.category}>
+              <AnimatedOnScroll
+                classNameIn="animate-in fade-in slide-in-from-bottom-8 duration-750"
+                classNameOut="animate-out fade-out slide-out-to-bottom-8 duration-750 opacity-0"
               >
-                <div className="flex h-16 w-16 items-center justify-center text-primary">
-                    {skill.icon}
-                </div>
-                <p className="mt-2 text-sm font-semibold">{skill.name}</p>
-              </Card>
-            </AnimatedOnScroll>
+                <h3 className="font-headline text-2xl font-semibold mb-8 text-center">{category.category}</h3>
+              </AnimatedOnScroll>
+              <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+                {category.skills.map((skill, skillIndex) => (
+                    <AnimatedOnScroll
+                      key={skill.name}
+                      classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-750"
+                      classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-750 opacity-0"
+                      style={{ animationDelay: `${skillIndex * 100}ms` }}
+                      className="h-full"
+                    >
+                      <Card 
+                        className="flex h-full flex-col items-center justify-center p-4 text-center transition-transform duration-300 hover:-translate-y-2"
+                      >
+                        <div className="flex h-16 w-16 items-center justify-center text-primary">
+                            {skill.icon}
+                        </div>
+                        <p className="mt-2 text-sm font-semibold">{skill.name}</p>
+                      </Card>
+                    </AnimatedOnScroll>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
     </section>
   );
 }
+
 
 function MyWorkSection() {
   return (
