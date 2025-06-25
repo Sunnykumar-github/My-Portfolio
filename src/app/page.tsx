@@ -5,7 +5,7 @@ import { Header } from '@/components/header';
 import { ProjectShowcase } from '@/components/project-showcase';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import { AnimatedOnScroll } from '@/components/animated-on-scroll';
 
@@ -342,7 +342,7 @@ function MyWorkSection() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="w-full py-20 md:py-32 overflow-hidden">
+    <section id="contact" className="w-full bg-secondary py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
           classNameIn="animate-in fade-in duration-1000"
@@ -350,23 +350,65 @@ function ContactSection() {
           className="mx-auto max-w-3xl text-center"
         >
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-            Let's Build Something Great
+            Get In Touch
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Have a project in mind or just want to say hello? Drop me a line.
+            Have a project in mind or just want to say hello? I'd love to hear from you.
           </p>
         </AnimatedOnScroll>
-        <AnimatedOnScroll
-          classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-200"
-          classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-500 opacity-0"
-          className="mx-auto mt-12 max-w-xl"
-        >
-          <Card>
-            <CardContent className="p-6">
-              <ContactForm />
-            </CardContent>
-          </Card>
-        </AnimatedOnScroll>
+        
+        <div className="mx-auto mt-12 grid max-w-5xl gap-12 md:grid-cols-2">
+            <AnimatedOnScroll
+                classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000 delay-200"
+                classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+            >
+                <Card className="h-full">
+                    <CardHeader>
+                        <CardTitle>Send a Message</CardTitle>
+                        <CardDescription>Fill out the form and I'll get back to you soon.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <ContactForm />
+                    </CardContent>
+                </Card>
+            </AnimatedOnScroll>
+
+            <AnimatedOnScroll
+                classNameIn="animate-in fade-in slide-in-from-right-16 duration-1000 delay-400"
+                classNameOut="animate-out fade-out slide-out-to-right-16 duration-500 opacity-0"
+                className="flex flex-col justify-center space-y-8"
+            >
+                <div>
+                    <h3 className="font-headline text-2xl font-semibold">Contact Details</h3>
+                    <div className="mt-4 space-y-4">
+                         <a href="mailto:hello@example.com" className="flex items-center gap-4 group">
+                            <Mail className="h-6 w-6 text-primary transition-colors group-hover:text-primary/80"/>
+                            <span className="text-lg text-muted-foreground transition-colors group-hover:text-foreground">hello@example.com</span>
+                         </a>
+                    </div>
+                </div>
+                 <div>
+                    <h3 className="font-headline text-2xl font-semibold">Follow Me Online</h3>
+                    <div className="flex gap-4 mt-4">
+                        <Button variant="outline" size="icon" asChild>
+                            <Link href="#" aria-label="Twitter" target="_blank" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1">
+                                <Twitter className="h-5 w-5" />
+                            </Link>
+                        </Button>
+                        <Button variant="outline" size="icon" asChild>
+                            <Link href="#" aria-label="GitHub" target="_blank" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1">
+                                <Github className="h-5 w-5" />
+                            </Link>
+                        </Button>
+                        <Button variant="outline" size="icon" asChild>
+                            <Link href="#" aria-label="LinkedIn" target="_blank" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1">
+                                <Linkedin className="h-5 w-5" />
+                            </Link>
+                        </Button>
+                    </div>
+                </div>
+            </AnimatedOnScroll>
+        </div>
       </div>
     </section>
   );
@@ -374,33 +416,11 @@ function ContactSection() {
 
 function Footer() {
   return (
-    <footer className="w-full border-t bg-secondary">
+    <footer className="w-full border-t bg-background">
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-8 md:flex-row md:px-6">
         <div className="flex items-center gap-2">
           <Code className="h-6 w-6 text-primary" />
           <span className="font-headline text-lg font-bold">CodeCraft Folio</span>
-        </div>
-        <div className="flex gap-4">
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="#" aria-label="Twitter">
-              <Twitter className="h-5 w-5" />
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="#" aria-label="GitHub">
-              <Github className="h-5 w-5" />
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="#" aria-label="LinkedIn">
-              <Linkedin className="h-5 w-5" />
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="mailto:hello@example.com" aria-label="Email">
-              <Mail className="h-5 w-5" />
-            </Link>
-          </Button>
         </div>
         <p className="text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()} John Doe. All rights reserved.
