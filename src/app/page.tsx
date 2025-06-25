@@ -200,12 +200,12 @@ function AboutSection() {
 function ExperienceSection() {
   const experiences = [
     {
-      role: 'Remote Developer (Freelancer)',
+      role: `Remote Developer ( Freelancer )`,
       company: 'BIT Cycles Rental | 2024 - Present',
       description: [
         'Designed and developed a responsive, mobile-first website for an on-campus cycle rental service, enabling ₹50/day bookings with an average load time under 1.2s.',
         'Built a seamless booking system supporting 100+ concurrent users, reducing average reservation time to under 30 seconds.',
-        'Facilitated over 300 rentals in the first month, with built-in validation reducing user errors by 40%.',
+        'Facilitated over 100 rentals till now, with built-in validation reducing user errors by 40%.',
       ],
     },
   ];
@@ -263,23 +263,23 @@ function ExperienceSection() {
 function EducationSection() {
   const educationItems = [
     {
-      degree: 'B.S. in Computer Science',
-      institution: 'University of Technology',
+      degree: 'B.Tech in Chemical Engineering ',
+      institution: 'Birla Institute of Technology, Mesra',
       description: 'Focused on software development and artificial intelligence. Completed a final year project on machine learning algorithms.',
     },
     {
-      degree: 'B.Tech in Computer Science',
-      institution: 'Code Academy',
+      degree: 'B.S in Data Science and Applications (Foundational Level)',
+      institution: 'Indian Institute of Technology, Madras',
       description: 'An intensive program covering full-stack development with a focus on MERN stack (MongoDB, Express, React, Node.js).',
     },
     {
-      degree: '12th Grade - Senior Secondary',
-      institution: 'Central High School',
+      degree: '12th Grade - Senior School Certificate Examination, 2021',
+      institution: 'DAV Public School, Tapin North,Jharkhand ',
       description: 'Completed studies with a focus on Physics, Chemistry, and Mathematics.',
     },
     {
-      degree: '10th Grade - Secondary',
-      institution: 'Public School',
+      degree: '10th Grade - Secondary School Examination, 2019',
+      institution: 'DAV Public School, Tapin North, Jharkhand',
       description: 'Established a strong academic foundation across all core subjects.',
     },
   ];

@@ -14,43 +14,36 @@ import { AnimatedOnScroll } from './animated-on-scroll';
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-featured online store with a custom CMS and payment integration.',
-    longDescription: 'Developed a scalable e-commerce platform from scratch using Next.js for the frontend and Node.js for the backend API. Integrated Stripe for secure payments and created a custom CMS for easy product management. The platform is fully responsive and optimized for performance.',
-    imageUrl: '/assets/project-ecommerce.png',
+    title: 'QuickFlix',
+    description: 'A full-stack Movie Ticket Booking website built with MongoDB, Express, React.js, and Node.js featuring Clerk for authentication, Inngest for background workflows, and Stripe integration for secure online payments.',
+    longDescription: 'Developed a full-stack Movie Ticket Booking website using the MERN stack (MongoDB, Express, React, Node.js). Integrated Clerk for user authentication, Inngest for background jobs, and Stripe for secure payment processing. The platform allows users to browse movies, select seats, and complete bookings with a seamless and responsive UI.',
+    imageUrl: 'https://placehold.co/600x400.png',
     tags: ['Web App', 'Backend', 'UI/UX'],
     liveUrl: '#',
     sourceUrl: '#',
+    hint: 'movie tickets'
   },
   {
     id: 2,
-    title: 'Task Management App',
+    title: 'BIT Cycles Rental',
     description: 'A sleek and intuitive mobile app for organizing tasks and boosting productivity.',
     longDescription: 'Designed and built a cross-platform mobile app using React Native. Features include drag-and-drop task reordering, push notifications, and collaboration tools. Focused on creating a seamless and engaging user experience.',
-    imageUrl: '/assets/project-task-app.png',
+    imageUrl: 'https://placehold.co/600x400.png',
     tags: ['Mobile', 'UI/UX'],
     liveUrl: '#',
     sourceUrl: '#',
+    hint: 'cycle rental'
   },
   {
     id: 3,
-    title: 'Data Visualization Dashboard',
+    title: 'Portfolio Website',
     description: 'An interactive dashboard for visualizing complex datasets in real-time.',
     longDescription: 'Created a powerful data visualization tool using D3.js and React. The dashboard allows users to explore large datasets through interactive charts and graphs. The backend is powered by a Python/Flask API that processes and serves the data.',
-    imageUrl: '/assets/project-dashboard.png',
+    imageUrl: 'https://placehold.co/600x400.png',
     tags: ['Web App', 'Backend'],
     liveUrl: '#',
     sourceUrl: '#',
-  },
-  {
-    id: 4,
-    title: 'Company Landing Page',
-    description: 'A modern and professional landing page for a tech startup.',
-    longDescription: 'Designed and developed a pixel-perfect landing page to showcase a startup\'s product. Implemented with a focus on SEO, performance, and conversion rate optimization. Used modern CSS techniques for a clean and engaging layout.',
-    imageUrl: '/assets/project-landing-page.png',
-    tags: ['Web App', 'UI/UX'],
-    liveUrl: '#',
-    sourceUrl: '#',
+    hint: 'portfolio website'
   },
 ];
 
@@ -121,6 +114,7 @@ export function ProjectShowcase() {
                                         alt={project.title}
                                         fill
                                         className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                        data-ai-hint={project.hint}
                                     />
                                 </div>
                             </Card>
@@ -136,7 +130,7 @@ export function ProjectShowcase() {
                                     <DialogDescription>{project.longDescription}</DialogDescription>
                                 </DialogHeader>
                                 <div className="relative my-4 h-64 w-full rounded-md overflow-hidden">
-                                    <Image src={project.imageUrl} alt={project.title} fill className="object-cover" />
+                                    <Image src={project.imageUrl} alt={project.title} fill className="object-cover" data-ai-hint={project.hint} />
                                 </div>
                                 <div className="flex gap-4">
                                     <Button asChild className="flex-1">
