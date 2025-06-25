@@ -26,27 +26,59 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section id="home" className="relative h-[90vh] min-h-[600px] w-full">
-      <div className="absolute inset-0 bg-grid-pattern opacity-20 dark:opacity-10"></div>
-      <div className="container mx-auto flex h-full flex-col items-center justify-center px-4 text-center">
-        <div className="relative z-10">
-          <Badge variant="secondary" className="mb-4">
-            Available for freelance work
-          </Badge>
-          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+    <section id="home" className="relative h-[90vh] min-h-[700px] w-full overflow-hidden">
+      <div className="absolute inset-0 z-[-1] bg-background">
+        <div 
+          className="absolute inset-0 opacity-30 dark:opacity-20" 
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse 80% 80% at 50% -20%, hsl(var(--primary) / 0.3), transparent)",
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-grid-pattern opacity-10 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
+      </div>
+
+      <div className="container mx-auto grid h-full items-center px-4 md:grid-cols-2">
+        <div className="flex flex-col items-center space-y-4 text-center md:items-start md:text-left">
+          <div className="animate-in fade-in slide-in-from-bottom-3 duration-1000">
+            <Badge variant="secondary">
+              Available for freelance work
+            </Badge>
+          </div>
+          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
             John Doe
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl">
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-400">
             A creative Full-Stack Developer crafting modern, responsive, and
             performant web applications.
           </p>
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-8 flex justify-center gap-4 md:justify-start animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-600">
             <Button asChild size="lg">
               <Link href="#contact">Get in Touch</Link>
             </Button>
             <Button asChild size="lg" variant="secondary">
               <Link href="#projects">View My Work</Link>
             </Button>
+          </div>
+        </div>
+
+        <div className="relative hidden h-full items-center justify-center md:flex">
+          <div className="relative h-[350px] w-[350px] lg:h-[450px] lg:w-[450px] animate-in fade-in zoom-in-50 duration-1000 delay-800">
+            <div className="group relative h-full w-full">
+              <div className="absolute -inset-2.5 rounded-full bg-primary/20 opacity-75 blur-3xl transition-all duration-1000 group-hover:opacity-100"></div>
+              <Image
+                src="https://placehold.co/600x600.png"
+                alt="John Doe"
+                width={450}
+                height={450}
+                priority
+                className="relative rounded-full border-4 border-primary/20 object-cover shadow-xl"
+                data-ai-hint="man portrait"
+              />
+               <div className="absolute inset-0 rounded-full border-2 border-primary/50 transition-transform duration-500 group-hover:scale-105"></div>
+              <div className="absolute inset-0 animate-pulse rounded-full border-2 border-primary/30"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -57,8 +89,8 @@ function HeroSection() {
 function AboutSection() {
   return (
     <section id="about" className="w-full bg-secondary py-20 md:py-32">
-      <div className="container mx-auto grid gap-12 px-4 md:grid-cols-2 md:px-6">
-        <div className="space-y-4">
+      <div className="container mx-auto grid items-center gap-12 px-4 md:grid-cols-2 md:px-6">
+        <div className="space-y-4 animate-in fade-in slide-in-from-left-16 duration-1000">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             About Me
           </h2>
@@ -68,26 +100,35 @@ function AboutSection() {
           <p className="text-muted-foreground">
             When I'm not coding, you can find me exploring the outdoors, contributing to open-source projects, or brewing the perfect cup of coffee.
           </p>
+          <div className="space-y-8 pt-4">
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <Briefcase className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="font-headline text-xl font-semibold">Experience</h3>
+                  <p className="text-muted-foreground">3+ years as a professional developer, working with startups and established companies to create impactful digital experiences.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <GraduationCap className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="font-headline text-xl font-semibold">Education</h3>
+                  <p className="text-muted-foreground">B.S. in Computer Science from the University of Technology, where I honed my problem-solving and analytical skills.</p>
+                </div>
+              </div>
+          </div>
         </div>
-        <div className="space-y-8">
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <Briefcase className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="font-headline text-xl font-semibold">Experience</h3>
-                <p className="text-muted-foreground">3+ years as a professional developer, working with startups and established companies to create impactful digital experiences.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <GraduationCap className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="font-headline text-xl font-semibold">Education</h3>
-                <p className="text-muted-foreground">B.S. in Computer Science from the University of Technology, where I honed my problem-solving and analytical skills.</p>
-              </div>
-            </div>
+        <div className="relative hidden h-[450px] w-full animate-in fade-in slide-in-from-right-16 duration-1000 md:block">
+            <Image 
+                src="https://placehold.co/600x800.png"
+                alt="John Doe coding"
+                fill
+                className="rounded-lg object-cover shadow-lg"
+                data-ai-hint="man coding"
+            />
         </div>
       </div>
     </section>
