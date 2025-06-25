@@ -189,18 +189,16 @@ function AboutSection() {
           classNameOut="animate-out fade-out zoom-out-95"
         >
           <div className="relative flex items-center justify-center">
-              <div className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
-                  <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-1000 group-data-[intersecting=true]:opacity-75 group-data-[intersecting=true]:bg-primary/30 group-data-[intersecting=true]:blur-4xl"></div>
-                  
-                  <Image
-                      src="/about.png"
-                      alt="Sunny Kumar"
-                      width={400}
-                      height={400}
-                      className="relative rounded-full object-cover shadow-2xl"
-                      data-ai-hint="portrait"
-                  />
-              </div>
+              <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-1000 group-data-[intersecting=true]:opacity-75 group-data-[intersecting=true]:bg-primary/30 group-data-[intersecting=true]:blur-4xl"></div>
+              
+              <Image
+                  src="/aboutme.png"
+                  alt="Sunny Kumar"
+                  width={400}
+                  height={400}
+                  className="relative rounded-full object-cover shadow-2xl"
+                  data-ai-hint="portrait"
+              />
           </div>
         </AnimatedOnScroll>
       </div>
@@ -218,6 +216,8 @@ function ExperienceSection() {
         'Built a seamless booking system supporting 100+ concurrent users, reducing average reservation time to under 30 seconds.',
         'Facilitated over 100 rentals till now, with built-in validation reducing user errors by 40%.',
       ],
+      imageUrl: 'https://placehold.co/600x400.png',
+      imageHint: 'cycle rental app'
     },
   ];
 
@@ -237,7 +237,7 @@ function ExperienceSection() {
           </p>
         </AnimatedOnScroll>
 
-        <div className="mx-auto grid max-w-3xl gap-8">
+        <div className="mx-auto grid max-w-5xl gap-12">
           {experiences.map((item, index) => (
             <AnimatedOnScroll
               key={item.role}
@@ -245,22 +245,30 @@ function ExperienceSection() {
               classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-1000 opacity-0"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <Card className="flex flex-col md:flex-row items-start gap-6 p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary shrink-0">
-                  <Briefcase className="h-6 w-6" />
+              <Card className="group grid grid-cols-1 md:grid-cols-5 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="md:col-span-3 flex flex-col p-8 justify-center">
+                  <div>
+                    <h3 className="font-headline text-2xl font-semibold">{item.role}</h3>
+                    <p className="text-muted-foreground mb-4 mt-1">{item.company}</p>
+                    {Array.isArray(item.description) ? (
+                      <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                        {item.description.map((point, i) => (
+                          <li key={i}>{point}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-muted-foreground">{item.description}</p>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-headline text-xl font-semibold">{item.role}</h3>
-                  <p className="text-muted-foreground mb-2">{item.company}</p>
-                  {Array.isArray(item.description) ? (
-                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                      {item.description.map((point, i) => (
-                        <li key={i}>{point}</li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-muted-foreground">{item.description}</p>
-                  )}
+                <div className="md:col-span-2 relative h-60 md:h-full min-h-[250px]">
+                    <Image
+                        src={item.imageUrl}
+                        alt={item.role}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        data-ai-hint={item.imageHint}
+                    />
                 </div>
               </Card>
             </AnimatedOnScroll>
@@ -277,7 +285,7 @@ function EducationSection() {
       degree: 'B.Tech in Chemical Engineering',
       institution: 'Birla Institute of Technology, Mesra',
       description: 'Focused on software development and artificial intelligence. Completed a final year project on machine learning algorithms.',
-      score: '8.5 CGPA',
+      score: '7.3 CGPA',
       coursework : ['Mass Transfer', 'Thermodynamics', 'Heat Transfer', 'Process Control and Instrumentations', 'Fluid Mechanics', 'Transport Phenomena', 'Chemical Reaction Engineering'],
     },
     {
