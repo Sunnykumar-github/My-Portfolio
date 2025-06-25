@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils';
 
 const routes = [
   { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
+  { href: '#experience', label: 'Work Experience' },
   { href: '#skills', label: 'Skills' },
   { href: '#my-work', label: 'My Work' },
   { href: '#contact', label: 'Contact' },
@@ -43,7 +43,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-headline text-xl font-bold">
           <Code className="h-6 w-6 text-primary" />
-          <span>CodeCraft Folio</span>
+          <span>Portfolio</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {routes.map((route) => (
