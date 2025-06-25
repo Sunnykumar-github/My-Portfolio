@@ -271,23 +271,27 @@ function EducationSection() {
       degree: 'B.Tech in Chemical Engineering',
       institution: 'Birla Institute of Technology, Mesra',
       description: 'Focused on software development and artificial intelligence. Completed a final year project on machine learning algorithms.',
-      cgpa: '8.5 CGPA',
+      score: '8.5 CGPA',
       coursework : ['Mass Transfer', 'Thermodynamics', 'Heat Transfer', 'Process Control and Instrumentations', 'Fluid Mechanics', 'Transport Phenomena', 'Chemical Reaction Engineering'],
     },
     {
       degree: 'B.S in Data Science and Applications (Foundational Level)',
       institution: 'Indian Institute of Technology, Madras',
+      description: 'Completed foundational level with a focus on core computer science and mathematical concepts.',
+      score: '8.2 CGPA',
       coursework : ['Python','Java','Mathematics','Statisics','English','Data Structures and Algorithms','DBMS','English','ML Foundations'],
     },
     {
       degree: '12th Grade - Senior School Certificate Examination, 2021',
       institution: 'DAV Public School, Tapin North,Jharkhand ',
       description: 'Completed studies with a focus on Physics, Chemistry, and Mathematics.',
+      score: '95.4%',
     },
     {
       degree: '10th Grade - Secondary School Examination, 2019',
       institution: 'DAV Public School, Tapin North, Jharkhand',
       description: 'Established a strong academic foundation across all core subjects.',
+      score: '96.4%',
     },
   ];
 
@@ -322,7 +326,7 @@ function EducationSection() {
                 <div>
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
                     <h3 className="font-headline text-xl font-semibold">{item.degree}</h3>
-                    {item.cgpa && <Badge variant="secondary" className="mt-1 sm:mt-0 self-start">{item.cgpa}</Badge>}
+                    {item.score && <Badge variant="secondary" className="mt-1 sm:mt-0 self-start">{item.score}</Badge>}
                   </div>
                   <p className="text-muted-foreground mb-2">{item.institution}</p>
                   <p className="text-muted-foreground">{item.description}</p>
