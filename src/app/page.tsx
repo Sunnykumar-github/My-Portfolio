@@ -183,17 +183,14 @@ function AboutSection() {
         >
           <div className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
             <div className="group relative h-full w-full">
-              <div className="absolute -inset-2.5 rounded-full bg-primary/20 opacity-75 blur-3xl transition-all duration-1000 group-hover:opacity-100"></div>
               <Image
                 src="https://placehold.co/600x600.png"
                 alt="John Doe coding"
                 width={400}
                 height={400}
-                className="relative rounded-full border-4 border-primary/20 object-cover shadow-xl"
+                className="relative rounded-full object-cover shadow-xl"
                 data-ai-hint="man coding"
               />
-                <div className="absolute inset-0 rounded-full border-2 border-primary/50 transition-transform duration-500 group-hover:scale-105"></div>
-              <div className="absolute inset-0 animate-pulse rounded-full border-2 border-primary/30"></div>
             </div>
           </div>
         </AnimatedOnScroll>
