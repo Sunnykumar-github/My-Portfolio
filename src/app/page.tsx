@@ -26,7 +26,7 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section id="home" className="relative h-[90vh] min-h-[700px] w-full overflow-hidden">
+    <section id="home" className="relative h-[80vh] min-h-[600px] w-full flex items-center justify-center text-center overflow-hidden">
       <div className="absolute inset-0 z-[-1] bg-background">
         <div 
           className="absolute inset-0 opacity-30 dark:opacity-20" 
@@ -39,8 +39,8 @@ function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
       </div>
 
-      <div className="container mx-auto grid h-full items-center px-4 md:grid-cols-2">
-        <div className="flex flex-col items-center space-y-4 text-center md:items-start md:text-left">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center space-y-4">
           <div className="animate-in fade-in slide-in-from-bottom-3 duration-1000">
             <Badge variant="secondary">
               Available for freelance work
@@ -53,7 +53,7 @@ function HeroSection() {
             A creative Full-Stack Developer crafting modern, responsive, and
             performant web applications.
           </p>
-          <div className="mt-8 flex justify-center gap-4 md:justify-start animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-600">
+          <div className="mt-8 flex justify-center gap-4 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-600">
             <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
               <Link href="#contact">Get in Touch</Link>
             </Button>
@@ -62,29 +62,11 @@ function HeroSection() {
             </Button>
           </div>
         </div>
-
-        <div className="relative hidden h-full items-center justify-center md:flex">
-          <div className="relative h-[350px] w-[350px] lg:h-[450px] lg:w-[450px] animate-in fade-in zoom-in-50 duration-1000 delay-800">
-            <div className="group relative h-full w-full">
-              <div className="absolute -inset-2.5 rounded-full bg-primary/20 opacity-75 blur-3xl transition-all duration-1000 group-hover:opacity-100"></div>
-              <Image
-                src="https://placehold.co/600x600.png"
-                alt="John Doe"
-                width={450}
-                height={450}
-                priority
-                className="relative rounded-full border-4 border-primary/20 object-cover shadow-xl"
-                data-ai-hint="man portrait"
-              />
-               <div className="absolute inset-0 rounded-full border-2 border-primary/50 transition-transform duration-500 group-hover:scale-105"></div>
-              <div className="absolute inset-0 animate-pulse rounded-full border-2 border-primary/30"></div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
 }
+
 
 function AboutSection() {
   return (
@@ -121,14 +103,22 @@ function AboutSection() {
               </div>
           </div>
         </div>
-        <div className="relative hidden h-[450px] w-full animate-in fade-in slide-in-from-right-16 duration-1000 md:block">
-            <Image 
-                src="https://placehold.co/600x800.png"
-                alt="John Doe coding"
-                fill
-                className="rounded-lg object-cover shadow-lg"
-                data-ai-hint="man coding"
-            />
+        <div className="relative hidden items-center justify-center animate-in fade-in slide-in-from-right-16 duration-1000 md:flex">
+            <div className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
+              <div className="group relative h-full w-full">
+                <div className="absolute -inset-2.5 rounded-full bg-primary/20 opacity-75 blur-3xl transition-all duration-1000 group-hover:opacity-100"></div>
+                <Image
+                  src="https://placehold.co/600x600.png"
+                  alt="John Doe coding"
+                  width={400}
+                  height={400}
+                  className="relative rounded-full border-4 border-primary/20 object-cover shadow-xl"
+                  data-ai-hint="man coding"
+                />
+                 <div className="absolute inset-0 rounded-full border-2 border-primary/50 transition-transform duration-500 group-hover:scale-105"></div>
+                <div className="absolute inset-0 animate-pulse rounded-full border-2 border-primary/30"></div>
+              </div>
+            </div>
         </div>
       </div>
     </section>
