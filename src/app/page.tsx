@@ -183,20 +183,26 @@ function AboutSection() {
             </p>
           </div>
         </AnimatedOnScroll>
-        <div className="relative flex items-center justify-center">
-            <div className="group relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
-                <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-500 group-hover:opacity-75 group-hover:bg-primary/30 group-hover:blur-4xl"></div>
-                
-                <Image
-                    src="/aboutme.png"
-                    alt="Sunny Kumar"
-                    width={400}
-                    height={400}
-                    className="relative rounded-full object-cover shadow-2xl"
-                    data-ai-hint="portrait"
-                />
-            </div>
-        </div>
+        <AnimatedOnScroll
+          className="group"
+          classNameIn="animate-in fade-in zoom-in-95 duration-1000"
+          classNameOut="animate-out fade-out zoom-out-95"
+        >
+          <div className="relative flex items-center justify-center">
+              <div className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
+                  <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-1000 group-data-[intersecting=true]:opacity-75 group-data-[intersecting=true]:bg-primary/30 group-data-[intersecting=true]:blur-4xl"></div>
+                  
+                  <Image
+                      src="/about.png"
+                      alt="Sunny Kumar"
+                      width={400}
+                      height={400}
+                      className="relative rounded-full object-cover shadow-2xl"
+                      data-ai-hint="portrait"
+                  />
+              </div>
+          </div>
+        </AnimatedOnScroll>
       </div>
     </section>
   );
@@ -278,7 +284,7 @@ function EducationSection() {
       degree: 'B.S in Data Science and Applications (Foundational Level)',
       institution: 'Indian Institute of Technology, Madras',
       description: 'Completed foundational level with a focus on core computer science and mathematical concepts.',
-      score: '8.2 CGPA',
+      score: '7.88 CGPA',
       coursework : ['Python','Java','Mathematics','Statisics','English','Data Structures and Algorithms','DBMS','English','ML Foundations'],
     },
     {
@@ -291,7 +297,7 @@ function EducationSection() {
       degree: '10th Grade - Secondary School Examination, 2019',
       institution: 'DAV Public School, Tapin North, Jharkhand',
       description: 'Established a strong academic foundation across all core subjects.',
-      score: '96.4%',
+      score: '96%',
     },
   ];
 
