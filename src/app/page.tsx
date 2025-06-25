@@ -1,3 +1,225 @@
+import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Palette, Server, Twitter } from 'lucide-react';
+import Link from 'next/link';
+import { ContactForm } from '@/components/contact-form';
+import { Header } from '@/components/header';
+import { ProjectShowcase } from '@/components/project-showcase';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Image from 'next/image';
+
 export default function Home() {
-  return <></>;
+  return (
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <main className="flex-1">
+        <HeroSection />
+        <AboutSection />
+        <ProjectSection />
+        <ServicesSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function HeroSection() {
+  return (
+    <section id="home" className="relative h-[90vh] min-h-[600px] w-full">
+      <div className="absolute inset-0 bg-grid-pattern opacity-20 dark:opacity-10"></div>
+      <div className="container mx-auto flex h-full flex-col items-center justify-center px-4 text-center">
+        <div className="relative z-10">
+          <Badge variant="secondary" className="mb-4">
+            Available for freelance work
+          </Badge>
+          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            John Doe
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl">
+            A creative Full-Stack Developer crafting modern, responsive, and
+            performant web applications.
+          </p>
+          <div className="mt-8 flex justify-center gap-4">
+            <Button asChild size="lg">
+              <Link href="#contact">Get in Touch</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="#projects">View My Work</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AboutSection() {
+  return (
+    <section id="about" className="w-full bg-secondary py-20 md:py-32">
+      <div className="container mx-auto grid gap-12 px-4 md:grid-cols-2 md:px-6">
+        <div className="space-y-4">
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+            About Me
+          </h2>
+          <p className="text-muted-foreground">
+            I'm a passionate developer with a knack for building beautiful and functional user interfaces. With a strong foundation in both front-end and back-end technologies, I enjoy bringing ideas to life in the browser. I'm a lifelong learner, always excited to explore new technologies and improve my craft.
+          </p>
+          <p className="text-muted-foreground">
+            When I'm not coding, you can find me exploring the outdoors, contributing to open-source projects, or brewing the perfect cup of coffee.
+          </p>
+        </div>
+        <div className="space-y-8">
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <Briefcase className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-headline text-xl font-semibold">Experience</h3>
+                <p className="text-muted-foreground">3+ years as a professional developer, working with startups and established companies to create impactful digital experiences.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <GraduationCap className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-headline text-xl font-semibold">Education</h3>
+                <p className="text-muted-foreground">B.S. in Computer Science from the University of Technology, where I honed my problem-solving and analytical skills.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProjectSection() {
+  return (
+    <section id="projects" className="w-full py-20 md:py-32">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="mb-12 text-center">
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+            My Work
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            Here are some of the projects I'm proud to have worked on.
+          </p>
+        </div>
+        <ProjectShowcase />
+      </div>
+    </section>
+  );
+}
+
+const services = [
+  {
+    icon: Code,
+    title: 'Frontend Development',
+    description: 'Crafting beautiful, responsive, and performant user interfaces with modern frameworks like React and Next.js.',
+  },
+  {
+    icon: Server,
+    title: 'Backend Development',
+    description: 'Building robust and scalable server-side applications and APIs using Node.js, Python, and other technologies.',
+  },
+  {
+    icon: Palette,
+    title: 'UI/UX Design',
+    description: 'Designing intuitive and engaging user experiences from wireframes to high-fidelity mockups using Figma.',
+  },
+];
+
+function ServicesSection() {
+  return (
+    <section id="services" className="w-full bg-secondary py-20 md:py-32">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="mb-12 text-center">
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+            What I Do
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            I offer a range of services to help you build your next digital product.
+          </p>
+        </div>
+        <div className="grid gap-8 md:grid-cols-3">
+          {services.map((service) => (
+            <Card key={service.title} className="text-center transition-transform duration-300 hover:-translate-y-2">
+              <CardHeader>
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <service.icon className="h-8 w-8" />
+                </div>
+                <CardTitle className="mt-4 font-headline">{service.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">{service.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ContactSection() {
+  return (
+    <section id="contact" className="w-full py-20 md:py-32">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+            Let's Build Something Great
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Have a project in mind or just want to say hello? Drop me a line.
+          </p>
+        </div>
+        <div className="mx-auto mt-12 max-w-xl">
+          <Card>
+            <CardContent className="p-6">
+              <ContactForm />
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="w-full border-t bg-secondary">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-8 md:flex-row md:px-6">
+        <div className="flex items-center gap-2">
+          <Code className="h-6 w-6 text-primary" />
+          <span className="font-headline text-lg font-bold">CodeCraft Folio</span>
+        </div>
+        <div className="flex gap-4">
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="#" aria-label="Twitter">
+              <Twitter className="h-5 w-5" />
+            </Link>
+          </Button>
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="#" aria-label="GitHub">
+              <Github className="h-5 w-5" />
+            </Link>
+          </Button>
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="#" aria-label="LinkedIn">
+              <Linkedin className="h-5 w-5" />
+            </Link>
+          </Button>
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="mailto:hello@example.com" aria-label="Email">
+              <Mail className="h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
+        <p className="text-sm text-muted-foreground">
+          &copy; {new Date().getFullYear()} John Doe. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
 }
