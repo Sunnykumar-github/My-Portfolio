@@ -44,6 +44,7 @@ export function AnimatedOnScroll({
   return (
     <div
       ref={ref}
+      data-intersecting={isIntersecting}
       className={cn(className, isIntersecting ? classNameIn : classNameOut)}
       {...props}
     >
