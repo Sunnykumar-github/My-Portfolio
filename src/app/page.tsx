@@ -1,5 +1,4 @@
 
-
 import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Twitter, Lightbulb, MessageSquareText, Puzzle, Users, ArrowRight, Phone, FileDown } from 'lucide-react';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
@@ -151,7 +150,7 @@ function HeroSection() {
               <Link href="#my-work">View My Work</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
-              <Link href="/Sunny_Kumar_Resume.pdf" download="Sunny_Kumar_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <Link href="/sunnyresume.pdf" download="Sunny_Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <FileDown className="mr-2 h-5 w-5" />
                 Resume
               </Link>
@@ -186,13 +185,15 @@ function AboutSection() {
         </AnimatedOnScroll>
         <div className="relative flex items-center justify-center">
             <div className="group relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
-                <div className="absolute -inset-2 rounded-full bg-primary/20 blur-xl transition-all duration-500 group-hover:bg-primary/40 group-hover:blur-2xl"></div>
+                <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-500 group-hover:opacity-75 group-hover:bg-primary/30 group-hover:blur-4xl"></div>
+                
                 <Image
-                    src="/aboutme.png"
+                    src="https://placehold.co/400x400.png"
                     alt="Sunny Kumar"
                     width={400}
                     height={400}
                     className="relative rounded-full object-cover shadow-2xl"
+                    data-ai-hint="portrait"
                 />
             </div>
         </div>
@@ -271,12 +272,12 @@ function EducationSection() {
       institution: 'Birla Institute of Technology, Mesra',
       description: 'Focused on software development and artificial intelligence. Completed a final year project on machine learning algorithms.',
       cgpa: '8.5 CGPA',
-      coursework: ['Data Structures & Algorithms', 'Database Management Systems', 'Operating Systems', 'Machine Learning'],
+      coursework : ['Mass Transfer', 'Thermodynamics', 'Heat Transfer', 'Process Control and Instrumentations', 'Fluid Mechanics', 'Transport Phenomena', 'Chemical Reaction Engineering'],
     },
     {
       degree: 'B.S in Data Science and Applications (Foundational Level)',
       institution: 'Indian Institute of Technology, Madras',
-      description: 'An intensive program covering full-stack development with a focus on MERN stack (MongoDB, Express, React, Node.js).',
+      coursework : ['Python','Java','Mathematics','Statisics','English','Data Structures and Algorithms','DBMS','English','ML Foundations'],
     },
     {
       degree: '12th Grade - Senior School Certificate Examination, 2021',
@@ -495,9 +496,9 @@ function ContactSection() {
                             <Mail className="h-6 w-6 text-primary transition-colors group-hover:text-primary/80"/>
                             <span className="text-lg text-muted-foreground transition-colors group-hover:text-foreground">oneplussunny01@gmail.com</span>
                          </a>
-                         <a href="tel:+91XXXXXXXXXX" className="flex items-center gap-4 group">
+                         <a href="tel:+918210436325" className="flex items-center gap-4 group">
                             <Phone className="h-6 w-6 text-primary transition-colors group-hover:text-primary/80"/>
-                            <span className="text-lg text-muted-foreground transition-colors group-hover:text-foreground">+91 XXXXXXXXXX</span>
+                            <span className="text-lg text-muted-foreground transition-colors group-hover:text-foreground">+91 8210436325</span>
                          </a>
                     </div>
                 </div>
@@ -557,4 +558,3 @@ function Footer() {
     </footer>
   );
 }
-
