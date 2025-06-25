@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import Link from 'next/link';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { AnimatedOnScroll } from './animated-on-scroll';
 
 const projects = [
@@ -83,43 +83,50 @@ export function ProjectShowcase() {
                     </Button>
                 ))}
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 gap-12">
                 {filteredProjects.map((project, index) => (
                     <AnimatedOnScroll
                         key={project.id}
-                        classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000"
-                        classNameOut="animate-out fade-out slide-out-to-left-16 duration-1000 opacity-0"
+                        classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-1000"
+                        classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-1000 opacity-0"
                         style={{ animationDelay: `${index * 150}ms` }}
                     >
                         <Dialog>
                             <Card 
-                                className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                                className="group grid grid-cols-1 md:grid-cols-5 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                             >
-                                <CardHeader className="p-0">
-                                    <div className="relative overflow-hidden h-60">
-                                        <Image
-                                            src={project.imageUrl}
-                                            alt={project.title}
-                                            fill
-                                            className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                            data-ai-hint={project.hint}
-                                        />
+                                <div className="md:col-span-3 flex flex-col p-6 justify-between">
+                                    <div>
+                                        <CardHeader className="p-0">
+                                            <CardTitle className="font-headline text-xl mb-2">{project.title}</CardTitle>
+                                            <CardDescription>{project.description}</CardDescription>
+                                        </CardHeader>
+                                        <CardContent className="p-0 mt-4">
+                                            <div className="flex flex-wrap gap-2">
+                                                {project.tags.map(tag => (
+                                                    <Badge key={tag} variant="outline">{tag}</Badge>
+                                                ))}
+                                            </div>
+                                        </CardContent>
                                     </div>
-                                </CardHeader>
-                                <CardContent className="p-6">
-                                    <CardTitle className="font-headline text-xl mb-2">{project.title}</CardTitle>
-                                    <CardDescription>{project.description}</CardDescription>
-                                    <div className="mt-4 flex flex-wrap gap-2">
-                                        {project.tags.map(tag => (
-                                            <Badge key={tag} variant="outline">{tag}</Badge>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                                <CardFooter className="p-6 pt-0">
-                                    <DialogTrigger asChild>
-                                        <Button variant="outline" className="w-full">View Details</Button>
-                                    </DialogTrigger>
-                                </CardFooter>
+                                    <CardFooter className="p-0 pt-6">
+                                        <DialogTrigger asChild>
+                                            <Button variant="outline" className="w-full">
+                                                View Details
+                                                <ArrowRight className="ml-2 h-4 w-4" />
+                                            </Button>
+                                        </DialogTrigger>
+                                    </CardFooter>
+                                </div>
+                                <div className="md:col-span-2 relative h-60 md:h-full min-h-[250px]">
+                                    <Image
+                                        src={project.imageUrl}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                        data-ai-hint={project.hint}
+                                    />
+                                </div>
                             </Card>
 
                             <DialogContent className="sm:max-w-[625px]">
