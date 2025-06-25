@@ -177,14 +177,14 @@ function AboutSection() {
             </p>
           </div>
         </AnimatedOnScroll>
-        <AnimatedOnScroll
-          classNameIn="animate-in fade-in slide-in-from-right-16 duration-1000 delay-200"
-          classNameOut="animate-out fade-out slide-out-to-right-16 duration-1000 opacity-0"
-          className="relative hidden items-center justify-center md:flex"
-        >
+        <div className="relative hidden items-center justify-center md:flex">
           <div className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
             <div className="group relative h-full w-full">
               <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-700 group-hover:opacity-75"></div>
+              
+              <div className="absolute inset-0 rounded-full border-2 border-primary/50 opacity-0 group-hover:animate-radiate"></div>
+              <div className="absolute inset-0 rounded-full border-2 border-primary/30 opacity-0 group-hover:animate-radiate [animation-delay:0.75s]"></div>
+
               <Image
                 src="https://placehold.co/600x600.png"
                 alt="John Doe coding"
@@ -195,7 +195,7 @@ function AboutSection() {
               />
             </div>
           </div>
-        </AnimatedOnScroll>
+        </div>
       </div>
     </section>
   );
