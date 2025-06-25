@@ -54,10 +54,10 @@ function HeroSection() {
             performant web applications.
           </p>
           <div className="mt-8 flex justify-center gap-4 md:justify-start animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-600">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
               <Link href="#contact">Get in Touch</Link>
             </Button>
-            <Button asChild size="lg" variant="secondary">
+            <Button asChild size="lg" variant="secondary" className="transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
               <Link href="#projects">View My Work</Link>
             </Button>
           </div>
