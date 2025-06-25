@@ -83,9 +83,12 @@ export function ProjectShowcase() {
                 ))}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                {filteredProjects.map(project => (
+                {filteredProjects.map((project, index) => (
                     <Dialog key={project.id}>
-                        <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <Card 
+                            className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-in fade-in zoom-in-95 duration-500"
+                            style={{ animationDelay: `${index * 150}ms` }}
+                        >
                             <CardHeader className="p-0">
                                 <div className="relative overflow-hidden h-60">
                                     <Image

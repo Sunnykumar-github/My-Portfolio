@@ -139,7 +139,7 @@ function ProjectSection() {
   return (
     <section id="projects" className="w-full py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-12 text-center">
+        <div className="mb-12 text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             My Work
           </h2>
@@ -175,7 +175,7 @@ function ServicesSection() {
   return (
     <section id="services" className="w-full bg-secondary py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-12 text-center">
+        <div className="mb-12 text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             What I Do
           </h2>
@@ -184,8 +184,12 @@ function ServicesSection() {
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
-          {services.map((service) => (
-            <Card key={service.title} className="text-center transition-transform duration-300 hover:-translate-y-2">
+          {services.map((service, index) => (
+            <Card 
+              key={service.title} 
+              className="text-center transition-transform duration-300 hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-12 duration-1000"
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
               <CardHeader>
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <service.icon className="h-8 w-8" />
@@ -207,7 +211,7 @@ function ContactSection() {
   return (
     <section id="contact" className="w-full py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             Let's Build Something Great
           </h2>
@@ -215,7 +219,7 @@ function ContactSection() {
             Have a project in mind or just want to say hello? Drop me a line.
           </p>
         </div>
-        <div className="mx-auto mt-12 max-w-xl">
+        <div className="mx-auto mt-12 max-w-xl animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
           <Card>
             <CardContent className="p-6">
               <ContactForm />
