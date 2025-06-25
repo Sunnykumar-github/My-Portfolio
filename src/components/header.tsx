@@ -43,7 +43,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-headline text-xl font-bold">
           <Code className="h-6 w-6 text-primary" />
-          <span>Portfolio</span>
+          <span>Sunny Kumar</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {routes.map((route) => (
@@ -69,7 +69,7 @@ export function Header() {
               <div className="flex flex-col p-6">
                 <Link href="/" className="mb-8 flex items-center gap-2 font-headline text-xl font-bold" onClick={() => setIsOpen(false)}>
                   <Code className="h-6 w-6 text-primary" />
-                  CodeCraft Folio
+                  Sunny Kumar
                 </Link>
                 <nav className="flex flex-col gap-4">
                   {routes.map((route) => (
