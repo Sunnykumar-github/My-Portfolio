@@ -10,6 +10,20 @@ const contactSchema = z.object({
 });
 
 export async function submitContactForm(prevState: any, formData: FormData) {
+  // Check if all required environment variables are set
+  if (
+    !process.env.EMAIL_HOST ||
+    !process.env.EMAIL_PORT ||
+    !process.env.EMAIL_USER ||
+    !process.env.EMAIL_PASS
+  ) {
+    console.error("Missing email environment variables. Please check your .env.local file.");
+    return {
+      success: false,
+      message: "Server is not configured for sending emails. Please contact the administrator.",
+    };
+  }
+
   const parsed = contactSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
