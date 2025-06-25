@@ -1,6 +1,7 @@
 "use server";
 
 import { z } from "zod";
+import nodemailer from "nodemailer";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -23,15 +24,41 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     };
   }
 
-  // Here you would typically send an email, save to a database, etc.
-  // For this example, we'll just log it and return success.
-  console.log("Form data received:", parsed.data);
+  const { name, email, message } = parsed.data;
 
-  // Simulate a network delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
+  const transporter = nodemailer.createTransport({
+    host: process.env.EMAIL_HOST,
+    port: Number(process.env.EMAIL_PORT),
+    secure: Number(process.env.EMAIL_PORT) === 465,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
 
-  return {
-    success: true,
-    message: "Thank you for your message! I'll get back to you soon.",
-  };
+  try {
+    await transporter.sendMail({
+      from: `"${name}" <${process.env.EMAIL_USER}>`,
+      to: "oneplussunny01@gmail.com",
+      replyTo: email,
+      subject: `New Contact Form Submission from ${name}`,
+      text: message,
+      html: `<p>You have a new contact form submission from:</p>
+             <p><strong>Name:</strong> ${name}</p>
+             <p><strong>Email:</strong> ${email}</p>
+             <p><strong>Message:</strong></p>
+             <p>${message.replace(/\n/g, '<br>')}</p>`,
+    });
+
+    return {
+      success: true,
+      message: "Thank you for your message! I'll get back to you soon.",
+    };
+  } catch (error) {
+    console.error("Failed to send email:", error);
+    return {
+      success: false,
+      message: "Sorry, something went wrong and I couldn't send your message. Please try again later.",
+    };
+  }
 }
