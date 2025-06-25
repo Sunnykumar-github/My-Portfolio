@@ -57,13 +57,6 @@ const NodejsIcon = () => (
     </svg>
 )
 
-const FirebaseIcon = () => (
-    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
-        <title>Firebase</title>
-        <path d="M3.66 12.015L11.97.28l.386.21 7.917 4.571-3.253 1.871-4.706-2.73-7.53 4.342v8.69l3.124-1.8v-5.12l4.407-2.54 4.407 2.54v4.957l-4.29 2.478-3.123-1.794.006-8.49zM11.995 13.29l-4.405-2.547-3.122 1.8v3.6l7.527 4.345.11-.064 7.53-4.346v-3.598l-3.123-1.802-4.407 2.553z"/>
-    </svg>
-)
-
 const PostgreSqlIcon = () => (
     <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
         <title>PostgreSQL</title>
@@ -380,7 +373,6 @@ const skillsData = [
     category: "Backend & Databases",
     skills: [
       { name: 'Node.js', icon: <NodejsIcon />, className: "text-[#339933]" },
-      { name: 'Firebase', icon: <FirebaseIcon />, className: "text-[#FFCA28]" },
       { name: 'PostgreSQL', icon: <PostgreSqlIcon />, className: "text-[#4169E1]" },
       { name: 'MongoDB', icon: <MongoDbIcon />, className: "text-[#47A248]" },
     ],
