@@ -87,9 +87,9 @@ export function ProjectShowcase() {
                 {filteredProjects.map((project, index) => (
                     <AnimatedOnScroll
                         key={project.id}
-                        classNameIn="animate-in fade-in slide-in-from-left-16 duration-700"
+                        classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000"
                         classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
-                        className={`delay-[${index * 150}ms]`}
+                        style={{ animationDelay: `${index * 150}ms` }}
                     >
                         <Dialog>
                             <Card 
