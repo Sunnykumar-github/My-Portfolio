@@ -192,7 +192,7 @@ function AboutSection() {
               <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-1000 group-data-[intersecting=true]:opacity-75 group-data-[intersecting=true]:bg-primary/30 group-data-[intersecting=true]:blur-4xl"></div>
               
               <Image
-                  src="/aboutme.png"
+                  src="https://placehold.co/400x400.png"
                   alt="Sunny Kumar"
                   width={400}
                   height={400}
@@ -247,19 +247,17 @@ function ExperienceSection() {
             >
               <Card className="group grid grid-cols-1 md:grid-cols-5 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <div className="md:col-span-3 flex flex-col p-8 justify-center">
-                  <div>
-                    <h3 className="font-headline text-2xl font-semibold">{item.role}</h3>
-                    <p className="text-muted-foreground mb-4 mt-1">{item.company}</p>
-                    {Array.isArray(item.description) ? (
-                      <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                        {item.description.map((point, i) => (
-                          <li key={i}>{point}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="text-muted-foreground">{item.description}</p>
-                    )}
-                  </div>
+                    <CardHeader className="p-0">
+                        <CardTitle className="font-headline text-2xl">{item.role}</CardTitle>
+                        <CardDescription className="pt-2">{item.company}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="p-0 pt-4">
+                        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                            {item.description.map((point, i) => (
+                            <li key={i}>{point}</li>
+                            ))}
+                        </ul>
+                    </CardContent>
                 </div>
                 <div className="md:col-span-2 relative h-60 md:h-full min-h-[250px]">
                     <Image
