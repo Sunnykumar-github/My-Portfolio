@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
+import { AnimatedOnScroll } from '@/components/animated-on-scroll';
 
 export default function Home() {
   return (
@@ -70,56 +71,65 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <section id="about" className="w-full bg-secondary py-20 md:py-32">
+    <section id="about" className="w-full bg-secondary py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto grid items-center gap-12 px-4 md:grid-cols-2 md:px-6">
-        <div className="space-y-4 animate-in fade-in slide-in-from-left-16 duration-1000">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-            About Me
-          </h2>
-          <p className="text-muted-foreground">
-            I'm a passionate developer with a knack for building beautiful and functional user interfaces. With a strong foundation in both front-end and back-end technologies, I enjoy bringing ideas to life in the browser. I'm a lifelong learner, always excited to explore new technologies and improve my craft.
-          </p>
-          <p className="text-muted-foreground">
-            When I'm not coding, you can find me exploring the outdoors, contributing to open-source projects, or brewing the perfect cup of coffee.
-          </p>
-          <div className="space-y-8 pt-4">
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Briefcase className="h-6 w-6" />
+        <AnimatedOnScroll
+          classNameIn="animate-in fade-in slide-in-from-left-16 duration-700"
+          classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+        >
+          <div className="space-y-4">
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+              About Me
+            </h2>
+            <p className="text-muted-foreground">
+              I'm a passionate developer with a knack for building beautiful and functional user interfaces. With a strong foundation in both front-end and back-end technologies, I enjoy bringing ideas to life in the browser. I'm a lifelong learner, always excited to explore new technologies and improve my craft.
+            </p>
+            <p className="text-muted-foreground">
+              When I'm not coding, you can find me exploring the outdoors, contributing to open-source projects, or brewing the perfect cup of coffee.
+            </p>
+            <div className="space-y-8 pt-4">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Briefcase className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-headline text-xl font-semibold">Experience</h3>
+                    <p className="text-muted-foreground">3+ years as a professional developer, working with startups and established companies to create impactful digital experiences.</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-headline text-xl font-semibold">Experience</h3>
-                  <p className="text-muted-foreground">3+ years as a professional developer, working with startups and established companies to create impactful digital experiences.</p>
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <GraduationCap className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-headline text-xl font-semibold">Education</h3>
+                    <p className="text-muted-foreground">B.S. in Computer Science from the University of Technology, where I honed my problem-solving and analytical skills.</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <GraduationCap className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="font-headline text-xl font-semibold">Education</h3>
-                  <p className="text-muted-foreground">B.S. in Computer Science from the University of Technology, where I honed my problem-solving and analytical skills.</p>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div className="relative hidden items-center justify-center animate-in fade-in slide-in-from-right-16 duration-1000 md:flex">
-            <div className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
-              <div className="group relative h-full w-full">
-                <div className="absolute -inset-2.5 rounded-full bg-primary/20 opacity-75 blur-3xl transition-all duration-1000 group-hover:opacity-100"></div>
-                <Image
-                  src="https://placehold.co/600x600.png"
-                  alt="John Doe coding"
-                  width={400}
-                  height={400}
-                  className="relative rounded-full border-4 border-primary/20 object-cover shadow-xl"
-                  data-ai-hint="man coding"
-                />
-                 <div className="absolute inset-0 rounded-full border-2 border-primary/50 transition-transform duration-500 group-hover:scale-105"></div>
-                <div className="absolute inset-0 animate-pulse rounded-full border-2 border-primary/30"></div>
-              </div>
             </div>
-        </div>
+          </div>
+        </AnimatedOnScroll>
+        <AnimatedOnScroll
+          classNameIn="animate-in fade-in slide-in-from-left-16 duration-700 delay-200"
+          classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+          className="relative hidden items-center justify-center md:flex"
+        >
+          <div className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
+            <div className="group relative h-full w-full">
+              <div className="absolute -inset-2.5 rounded-full bg-primary/20 opacity-75 blur-3xl transition-all duration-1000 group-hover:opacity-100"></div>
+              <Image
+                src="https://placehold.co/600x600.png"
+                alt="John Doe coding"
+                width={400}
+                height={400}
+                className="relative rounded-full border-4 border-primary/20 object-cover shadow-xl"
+                data-ai-hint="man coding"
+              />
+                <div className="absolute inset-0 rounded-full border-2 border-primary/50 transition-transform duration-500 group-hover:scale-105"></div>
+              <div className="absolute inset-0 animate-pulse rounded-full border-2 border-primary/30"></div>
+            </div>
+          </div>
+        </AnimatedOnScroll>
       </div>
     </section>
   );
@@ -127,16 +137,20 @@ function AboutSection() {
 
 function ProjectSection() {
   return (
-    <section id="projects" className="w-full py-20 md:py-32">
+    <section id="projects" className="w-full py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-12 text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
+        <AnimatedOnScroll
+          classNameIn="animate-in fade-in slide-in-from-left-16 duration-700"
+          classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+          className="mb-12 text-center"
+        >
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             My Work
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Here are some of the projects I'm proud to have worked on.
           </p>
-        </div>
+        </AnimatedOnScroll>
         <ProjectShowcase />
       </div>
     </section>
@@ -163,33 +177,42 @@ const services = [
 
 function ServicesSection() {
   return (
-    <section id="services" className="w-full bg-secondary py-20 md:py-32">
+    <section id="services" className="w-full bg-secondary py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-12 text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
+        <AnimatedOnScroll
+          classNameIn="animate-in fade-in slide-in-from-left-16 duration-700"
+          classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+          className="mb-12 text-center"
+        >
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             What I Do
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             I offer a range of services to help you build your next digital product.
           </p>
-        </div>
+        </AnimatedOnScroll>
         <div className="grid gap-8 md:grid-cols-3">
           {services.map((service, index) => (
-            <Card 
-              key={service.title} 
-              className="text-center transition-transform duration-300 hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-12 duration-1000"
-              style={{ animationDelay: `${index * 200}ms` }}
+            <AnimatedOnScroll
+              key={service.title}
+              classNameIn="animate-in fade-in slide-in-from-left-16 duration-700"
+              classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+              className={`delay-[${index * 150}ms] h-full`}
             >
-              <CardHeader>
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <service.icon className="h-8 w-8" />
-                </div>
-                <CardTitle className="mt-4 font-headline">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{service.description}</p>
-              </CardContent>
-            </Card>
+              <Card 
+                className="text-center transition-transform duration-300 hover:-translate-y-2 h-full"
+              >
+                <CardHeader>
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <service.icon className="h-8 w-8" />
+                  </div>
+                  <CardTitle className="mt-4 font-headline">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </CardContent>
+              </Card>
+            </AnimatedOnScroll>
           ))}
         </div>
       </div>
@@ -199,23 +222,31 @@ function ServicesSection() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="w-full py-20 md:py-32">
+    <section id="contact" className="w-full py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mx-auto max-w-3xl text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
+        <AnimatedOnScroll
+          classNameIn="animate-in fade-in slide-in-from-left-16 duration-700"
+          classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+          className="mx-auto max-w-3xl text-center"
+        >
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             Let's Build Something Great
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Have a project in mind or just want to say hello? Drop me a line.
           </p>
-        </div>
-        <div className="mx-auto mt-12 max-w-xl animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
+        </AnimatedOnScroll>
+        <AnimatedOnScroll
+          classNameIn="animate-in fade-in slide-in-from-left-16 duration-700 delay-200"
+          classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+          className="mx-auto mt-12 max-w-xl"
+        >
           <Card>
             <CardContent className="p-6">
               <ContactForm />
             </CardContent>
           </Card>
-        </div>
+        </AnimatedOnScroll>
       </div>
     </section>
   );
