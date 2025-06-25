@@ -4,8 +4,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "CodeCraft Folio",
-  description: "A portfolio for a creative developer.",
+  title: "Sunny Kumar - Software Engineer | Full Stack Developer | AI/ML Expert",
+  description: "Portfolio website of Sunny Kumar",
 };
 
 export default function RootLayout({
