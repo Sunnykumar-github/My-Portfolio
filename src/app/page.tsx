@@ -1,5 +1,6 @@
 
-import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Twitter, Lightbulb, MessageSquareText, Puzzle, Users, ArrowRight } from 'lucide-react';
+
+import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Twitter, Lightbulb, MessageSquareText, Puzzle, Users, ArrowRight, Phone, FileDown } from 'lucide-react';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { Header } from '@/components/header';
@@ -142,12 +143,18 @@ function HeroSection() {
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-400">
             Software Engineer and Full-Stack Developer crafting next-gen web experiences blending code, creativity and AI.
           </p>
-          <div className="mt-8 flex justify-center gap-4 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-600">
+          <div className="mt-8 flex flex-wrap justify-center gap-4 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-600">
             <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
               <Link href="#contact">Get in Touch</Link>
             </Button>
             <Button asChild size="lg" variant="secondary" className="transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
               <Link href="#my-work">View My Work</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
+              <Link href="/Sunny_Kumar_Resume.pdf" download="Sunny_Kumar_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <FileDown className="mr-2 h-5 w-5" />
+                Resume
+              </Link>
             </Button>
           </div>
         </div>
@@ -177,20 +184,17 @@ function AboutSection() {
             </p>
           </div>
         </AnimatedOnScroll>
-        <div className="relative hidden items-center justify-center md:flex">
-          <div className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
-            <div className="group relative h-full w-full">
-              <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-500 group-hover:opacity-75 group-hover:bg-primary/30 group-hover:blur-4xl"></div>
-              
-              <Image
-                src="/aboutme.png"
-                alt="Sunny Kumar"
-                width={400}
-                height={400}
-                className="relative rounded-full object-cover shadow-2xl"
-              />
+        <div className="relative flex items-center justify-center">
+            <div className="group relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
+                <div className="absolute -inset-2 rounded-full bg-primary/20 blur-xl transition-all duration-500 group-hover:bg-primary/40 group-hover:blur-2xl"></div>
+                <Image
+                    src="/aboutme.png"
+                    alt="Sunny Kumar"
+                    width={400}
+                    height={400}
+                    className="relative rounded-full object-cover shadow-2xl"
+                />
             </div>
-          </div>
         </div>
       </div>
     </section>
@@ -263,9 +267,11 @@ function ExperienceSection() {
 function EducationSection() {
   const educationItems = [
     {
-      degree: 'B.Tech in Chemical Engineering ',
+      degree: 'B.Tech in Chemical Engineering',
       institution: 'Birla Institute of Technology, Mesra',
       description: 'Focused on software development and artificial intelligence. Completed a final year project on machine learning algorithms.',
+      cgpa: '8.5 CGPA',
+      coursework: ['Data Structures & Algorithms', 'Database Management Systems', 'Operating Systems', 'Machine Learning'],
     },
     {
       degree: 'B.S in Data Science and Applications (Foundational Level)',
@@ -313,9 +319,20 @@ function EducationSection() {
                   <GraduationCap className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-headline text-xl font-semibold">{item.degree}</h3>
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+                    <h3 className="font-headline text-xl font-semibold">{item.degree}</h3>
+                    {item.cgpa && <Badge variant="secondary" className="mt-1 sm:mt-0 self-start">{item.cgpa}</Badge>}
+                  </div>
                   <p className="text-muted-foreground mb-2">{item.institution}</p>
                   <p className="text-muted-foreground">{item.description}</p>
+                  {item.coursework && (
+                    <div className="mt-4">
+                        <h4 className="font-semibold text-sm">Relevant Coursework:</h4>
+                        <ul className="list-disc list-inside space-y-1 text-muted-foreground mt-2 text-sm">
+                            {item.coursework.map(course => <li key={course}>{course}</li>)}
+                        </ul>
+                    </div>
+                  )}
                 </div>
               </Card>
             </AnimatedOnScroll>
@@ -461,7 +478,7 @@ function ContactSection() {
             Get In Touch
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Have a project in mind or just want to say hello? I'd love to hear from you.
+            Let's connect, collaborate and build together .
           </p>
         </AnimatedOnScroll>
         
@@ -474,9 +491,13 @@ function ContactSection() {
                 <div>
                     <h3 className="font-headline text-2xl font-semibold">Contact Details</h3>
                     <div className="mt-4 space-y-4">
-                         <a href="mailto:hello@example.com" className="flex items-center gap-4 group">
+                         <a href="mailto:oneplussunny01@gmail.com" className="flex items-center gap-4 group">
                             <Mail className="h-6 w-6 text-primary transition-colors group-hover:text-primary/80"/>
-                            <span className="text-lg text-muted-foreground transition-colors group-hover:text-foreground">hello@example.com</span>
+                            <span className="text-lg text-muted-foreground transition-colors group-hover:text-foreground">oneplussunny01@gmail.com</span>
+                         </a>
+                         <a href="tel:+91XXXXXXXXXX" className="flex items-center gap-4 group">
+                            <Phone className="h-6 w-6 text-primary transition-colors group-hover:text-primary/80"/>
+                            <span className="text-lg text-muted-foreground transition-colors group-hover:text-foreground">+91 XXXXXXXXXX</span>
                          </a>
                     </div>
                 </div>
@@ -484,17 +505,17 @@ function ContactSection() {
                     <h3 className="font-headline text-2xl font-semibold">Follow Me Online</h3>
                     <div className="flex gap-4 mt-4">
                         <Button variant="outline" size="icon" asChild>
-                            <Link href="#" aria-label="Twitter" target="_blank" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1">
+                            <Link href="https://x.com/Sunny_Kumar_52" aria-label="Twitter" target="_blank" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1">
                                 <Twitter className="h-5 w-5" />
                             </Link>
                         </Button>
                         <Button variant="outline" size="icon" asChild>
-                            <Link href="#" aria-label="GitHub" target="_blank" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1">
+                            <Link href="https://github.com/Sunnykumar-github" aria-label="GitHub" target="_blank" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1">
                                 <Github className="h-5 w-5" />
                             </Link>
                         </Button>
                         <Button variant="outline" size="icon" asChild>
-                            <Link href="#" aria-label="LinkedIn" target="_blank" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1">
+                            <Link href="https://linkedin.com/in/sunny-kumar3005" aria-label="LinkedIn" target="_blank" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1">
                                 <Linkedin className="h-5 w-5" />
                             </Link>
                         </Button>
@@ -527,12 +548,13 @@ function Footer() {
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-8 md:flex-row md:px-6">
         <div className="flex items-center gap-2">
           <Code className="h-6 w-6 text-primary" />
-          <span className="font-headline text-lg font-bold">CodeCraft Folio</span>
+          <span className="font-headline text-lg font-bold">Sunny Kumar</span>
         </div>
         <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Sunny Kumar. All rights reserved.
+          &copy; {new Date().getFullYear()} Portfolio . All rights reserved.
         </p>
       </div>
     </footer>
   );
 }
+

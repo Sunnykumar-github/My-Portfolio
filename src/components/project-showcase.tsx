@@ -18,7 +18,7 @@ const projects = [
     description: 'A full-stack Movie Ticket Booking website built with MongoDB, Express, React.js, and Node.js featuring Clerk for authentication, Inngest for background workflows, and Stripe integration for secure online payments.',
     longDescription: 'Developed a full-stack Movie Ticket Booking website using the MERN stack (MongoDB, Express, React, Node.js). Integrated Clerk for user authentication, Inngest for background jobs, and Stripe for secure payment processing. The platform allows users to browse movies, select seats, and complete bookings with a seamless and responsive UI.',
     imageUrl: 'https://placehold.co/600x400.png',
-    tags: ['Web App', 'Backend', 'UI/UX'],
+    tags: ['MongoDB', 'Express', 'React', 'Node.js', 'Clerk', 'UI/UX', 'Stripe', 'Inngest', 'Figma'],
     liveUrl: '#',
     sourceUrl: '#',
     hint: 'movie tickets'
@@ -29,7 +29,7 @@ const projects = [
     description: 'A responsive web app for on-campus bicycle rentals with a streamlined booking system, mobile-first UI, and real-time form validation',
     longDescription: 'Designed and built a responsive web app for on-campus bicycle rentals at ₹50/day. Features include a streamlined booking system, mobile-first UI, and real-time form validation. Enabled over 100 rentals till now with fast load times and intuitive user experience.',
     imageUrl: 'https://placehold.co/600x400.png',
-    tags: ['Mobile', 'UI/UX'],
+    tags: ['MongoDB', 'Express', 'React', 'Node.js', 'Clerk', 'UI/UX', 'Stripe', 'Inngest', 'Web App'],
     liveUrl: '#',
     sourceUrl: '#',
     hint: 'cycle rental'
@@ -40,7 +40,7 @@ const projects = [
     description: 'A sleek, modern portfolio built with Next.js, React, and Tailwind CSS. It features smooth animations, a dark mode theme, and an interactive project showcase, all wrapped in a fully responsive design.',
     longDescription: 'This portfolio is a dynamic, responsive website designed to showcase my skills. Built with Next.js and React, it leverages Tailwind CSS for styling and ShadCN for UI components. It includes features like a dark mode toggle, smooth on-scroll animations, and an interactive project showcase, demonstrating a modern approach to web development and design.',
     imageUrl: 'https://placehold.co/600x400.png',
-    tags: ['Next.js', 'React', 'Tailwind CSS', 'UI/UX'],
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'UI/UX', 'Web App'],
     liveUrl: '#',
     sourceUrl: '#',
     hint: 'portfolio website'
