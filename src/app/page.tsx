@@ -200,14 +200,13 @@ function AboutSection() {
 function ExperienceSection() {
   const experiences = [
     {
-      role: 'Senior Developer',
-      company: 'Tech Corp | 2020 - Present',
-      description: 'Leading development of new features for a large-scale web application, mentoring junior developers, and improving code quality and performance.',
-    },
-    {
-      role: 'Web Developer',
-      company: 'Web Solutions | 2018 - 2020',
-      description: 'Developed and maintained client websites using modern web technologies, focusing on responsive design and user experience.',
+      role: 'Remote Developer (Freelancer)',
+      company: 'BIT Cycles Rental | 2024 - Present',
+      description: [
+        'Designed and developed a responsive, mobile-first website for an on-campus cycle rental service, enabling ₹50/day bookings with an average load time under 1.2s.',
+        'Built a seamless booking system supporting 100+ concurrent users, reducing average reservation time to under 30 seconds.',
+        'Facilitated over 300 rentals in the first month, with built-in validation reducing user errors by 40%.',
+      ],
     },
   ];
 
@@ -242,7 +241,15 @@ function ExperienceSection() {
                 <div>
                   <h3 className="font-headline text-xl font-semibold">{item.role}</h3>
                   <p className="text-muted-foreground mb-2">{item.company}</p>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  {Array.isArray(item.description) ? (
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                      {item.description.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-muted-foreground">{item.description}</p>
+                  )}
                 </div>
               </Card>
             </AnimatedOnScroll>
