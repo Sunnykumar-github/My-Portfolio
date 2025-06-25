@@ -183,7 +183,7 @@ function AboutSection() {
               <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-500 group-hover:opacity-75 group-hover:bg-primary/30 group-hover:blur-4xl"></div>
               
               <Image
-                src="/assets/about_me_picture.png"
+                src="/aboutme.png"
                 alt="Sunny Kumar"
                 width={400}
                 height={400}
