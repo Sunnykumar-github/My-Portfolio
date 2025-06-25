@@ -1,3 +1,4 @@
+
 import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Twitter, Lightbulb, MessageSquareText, Puzzle, Users } from 'lucide-react';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
@@ -183,12 +184,13 @@ function AboutSection() {
         >
           <div className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
             <div className="group relative h-full w-full">
+              <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-700 group-hover:opacity-75"></div>
               <Image
                 src="https://placehold.co/600x600.png"
                 alt="John Doe coding"
                 width={400}
                 height={400}
-                className="relative rounded-full object-cover shadow-xl"
+                className="relative rounded-full object-cover shadow-2xl"
                 data-ai-hint="man coding"
               />
             </div>
