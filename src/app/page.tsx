@@ -180,11 +180,8 @@ function AboutSection() {
         <div className="relative hidden items-center justify-center md:flex">
           <div className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
             <div className="group relative h-full w-full">
-              <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-700 group-hover:opacity-75"></div>
+              <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-500 group-hover:opacity-75 group-hover:bg-primary/30 group-hover:blur-4xl"></div>
               
-              <div className="absolute inset-0 rounded-full border-2 border-primary/50 opacity-0 group-hover:animate-radiate"></div>
-              <div className="absolute inset-0 rounded-full border-2 border-primary/30 opacity-0 group-hover:animate-radiate [animation-delay:0.75s]"></div>
-
               <Image
                 src="https://placehold.co/600x600.png"
                 alt="John Doe coding"
@@ -464,8 +461,22 @@ function ContactSection() {
         
         <div className="mx-auto mt-12 grid max-w-5xl gap-12 md:grid-cols-2">
             <AnimatedOnScroll
-                classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000 delay-200"
+                classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000 delay-400"
                 classNameOut="animate-out fade-out slide-out-to-left-16 duration-1000 opacity-0"
+            >
+                <Card className="h-full">
+                    <CardHeader>
+                        <CardTitle>Send a Message</CardTitle>
+                        <CardDescription>Fill out the form and I'll get back to you soon.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <ContactForm />
+                    </CardContent>
+                </Card>
+            </AnimatedOnScroll>
+            <AnimatedOnScroll
+                classNameIn="animate-in fade-in slide-in-from-right-16 duration-1000 delay-200"
+                classNameOut="animate-out fade-out slide-out-to-right-16 duration-1000 opacity-0"
                 className="flex flex-col justify-center space-y-8"
             >
                 <div>
@@ -497,20 +508,6 @@ function ContactSection() {
                         </Button>
                     </div>
                 </div>
-            </AnimatedOnScroll>
-            <AnimatedOnScroll
-                classNameIn="animate-in fade-in slide-in-from-right-16 duration-1000 delay-400"
-                classNameOut="animate-out fade-out slide-out-to-right-16 duration-1000 opacity-0"
-            >
-                <Card className="h-full">
-                    <CardHeader>
-                        <CardTitle>Send a Message</CardTitle>
-                        <CardDescription>Fill out the form and I'll get back to you soon.</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <ContactForm />
-                    </CardContent>
-                </Card>
             </AnimatedOnScroll>
         </div>
       </div>
