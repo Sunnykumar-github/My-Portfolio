@@ -1,3 +1,4 @@
+
 import { Briefcase, Code, Database, GitMerge, Github, GraduationCap, Linkedin, Mail, Palette, Server, Smartphone, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
@@ -44,19 +45,19 @@ function HeroSection() {
 
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center space-y-4">
-          <div className="animate-in fade-in slide-in-from-bottom-3 duration-[1500ms]">
+          <div className="animate-in fade-in slide-in-from-bottom-3 duration-1000">
             <Badge variant="secondary">
               Available for freelance work
             </Badge>
           </div>
-          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-in fade-in slide-in-from-bottom-4 duration-[1500ms] delay-200">
+          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
             John Doe
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl animate-in fade-in slide-in-from-bottom-5 duration-[1500ms] delay-400">
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-400">
             A creative Full-Stack Developer crafting modern, responsive, and
             performant web applications.
           </p>
-          <div className="mt-8 flex justify-center gap-4 animate-in fade-in slide-in-from-bottom-6 duration-[1500ms] delay-600">
+          <div className="mt-8 flex justify-center gap-4 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-600">
             <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
               <Link href="#contact">Get in Touch</Link>
             </Button>
@@ -76,8 +77,8 @@ function AboutSection() {
     <section id="about" className="w-full bg-background py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto grid items-center gap-12 px-4 md:grid-cols-2 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in slide-in-from-left-16 duration-[1500ms]"
-          classNameOut="animate-out fade-out slide-out-to-left-16 duration-[750ms] opacity-0"
+          classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000"
+          classNameOut="animate-out fade-out slide-out-to-left-16 duration-750 opacity-0"
         >
           <div className="space-y-4">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -92,8 +93,8 @@ function AboutSection() {
           </div>
         </AnimatedOnScroll>
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in slide-in-from-right-16 duration-[1500ms] delay-200"
-          classNameOut="animate-out fade-out slide-out-to-right-16 duration-[750ms] opacity-0"
+          classNameIn="animate-in fade-in slide-in-from-right-16 duration-1000 delay-200"
+          classNameOut="animate-out fade-out slide-out-to-right-16 duration-750 opacity-0"
           className="relative hidden items-center justify-center md:flex"
         >
           <div className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
@@ -135,8 +136,8 @@ function ExperienceSection() {
     <section id="experience" className="w-full bg-secondary py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in duration-[1500ms]"
-          classNameOut="animate-out fade-out duration-[750ms] opacity-0"
+          classNameIn="animate-in fade-in duration-1000"
+          classNameOut="animate-out fade-out duration-750 opacity-0"
           className="mb-12 text-center"
         >
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -151,8 +152,8 @@ function ExperienceSection() {
           {experiences.map((item, index) => (
             <AnimatedOnScroll
               key={item.role}
-              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-[1500ms]"
-              classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-[750ms] opacity-0"
+              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-1000"
+              classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-750 opacity-0"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <Card className="flex flex-col md:flex-row items-start gap-6 p-6">
@@ -201,8 +202,8 @@ function EducationSection() {
     <section id="education" className="w-full py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in duration-[1500ms]"
-          classNameOut="animate-out fade-out duration-[750ms] opacity-0"
+          classNameIn="animate-in fade-in duration-1000"
+          classNameOut="animate-out fade-out duration-750 opacity-0"
           className="mb-12 text-center"
         >
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -217,8 +218,8 @@ function EducationSection() {
           {educationItems.map((item, index) => (
             <AnimatedOnScroll
               key={item.degree}
-              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-[1500ms]"
-              classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-[750ms] opacity-0"
+              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-1000"
+              classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-750 opacity-0"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <Card className="flex flex-col md:flex-row items-start gap-6 p-6">
@@ -277,8 +278,8 @@ function SkillsSection() {
     <section id="skills" className="w-full bg-secondary py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in duration-[1500ms]"
-          classNameOut="animate-out fade-out duration-[750ms] opacity-0"
+          classNameIn="animate-in fade-in duration-1000"
+          classNameOut="animate-out fade-out duration-750 opacity-0"
           className="mb-12 text-center"
         >
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -292,8 +293,8 @@ function SkillsSection() {
           {skills.map((skill, index) => (
             <AnimatedOnScroll
               key={skill.title}
-              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-[1500ms]"
-              classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-[750ms] opacity-0"
+              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-1000"
+              classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-750 opacity-0"
               style={{ animationDelay: `${index * 150}ms` }}
               className="h-full"
             >
@@ -323,8 +324,8 @@ function MyWorkSection() {
     <section id="my-work" className="w-full py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in duration-[1500ms]"
-          classNameOut="animate-out fade-out duration-[750ms] opacity-0"
+          classNameIn="animate-in fade-in duration-1000"
+          classNameOut="animate-out fade-out duration-750 opacity-0"
           className="mb-12 text-center"
         >
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -345,8 +346,8 @@ function ContactSection() {
     <section id="contact" className="w-full bg-secondary py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in duration-[1500ms]"
-          classNameOut="animate-out fade-out duration-[750ms] opacity-0"
+          classNameIn="animate-in fade-in duration-1000"
+          classNameOut="animate-out fade-out duration-750 opacity-0"
           className="mx-auto max-w-3xl text-center"
         >
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -359,8 +360,8 @@ function ContactSection() {
         
         <div className="mx-auto mt-12 grid max-w-5xl gap-12 md:grid-cols-2">
             <AnimatedOnScroll
-                classNameIn="animate-in fade-in slide-in-from-left-16 duration-[1500ms] delay-200"
-                classNameOut="animate-out fade-out slide-out-to-left-16 duration-[750ms] opacity-0"
+                classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000 delay-200"
+                classNameOut="animate-out fade-out slide-out-to-left-16 duration-750 opacity-0"
                 className="flex flex-col justify-center space-y-8"
             >
                 <div>
@@ -395,8 +396,8 @@ function ContactSection() {
             </AnimatedOnScroll>
 
             <AnimatedOnScroll
-                classNameIn="animate-in fade-in slide-in-from-right-16 duration-[1500ms] delay-400"
-                classNameOut="animate-out fade-out slide-out-to-right-16 duration-[750ms] opacity-0"
+                classNameIn="animate-in fade-in slide-in-from-right-16 duration-1000 delay-400"
+                classNameOut="animate-out fade-out slide-out-to-right-16 duration-750 opacity-0"
             >
                 <Card className="h-full">
                     <CardHeader>
