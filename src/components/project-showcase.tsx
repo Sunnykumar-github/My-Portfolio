@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from 'react';
@@ -16,44 +17,40 @@ const projects = [
     title: 'E-Commerce Platform',
     description: 'A full-featured online store with a custom CMS and payment integration.',
     longDescription: 'Developed a scalable e-commerce platform from scratch using Next.js for the frontend and Node.js for the backend API. Integrated Stripe for secure payments and created a custom CMS for easy product management. The platform is fully responsive and optimized for performance.',
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: '/assets/project-ecommerce.png',
     tags: ['Web App', 'Backend', 'UI/UX'],
     liveUrl: '#',
     sourceUrl: '#',
-    hint: "online store"
   },
   {
     id: 2,
     title: 'Task Management App',
     description: 'A sleek and intuitive mobile app for organizing tasks and boosting productivity.',
     longDescription: 'Designed and built a cross-platform mobile app using React Native. Features include drag-and-drop task reordering, push notifications, and collaboration tools. Focused on creating a seamless and engaging user experience.',
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: '/assets/project-task-app.png',
     tags: ['Mobile', 'UI/UX'],
     liveUrl: '#',
     sourceUrl: '#',
-    hint: "task management"
   },
   {
     id: 3,
     title: 'Data Visualization Dashboard',
     description: 'An interactive dashboard for visualizing complex datasets in real-time.',
     longDescription: 'Created a powerful data visualization tool using D3.js and React. The dashboard allows users to explore large datasets through interactive charts and graphs. The backend is powered by a Python/Flask API that processes and serves the data.',
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: '/assets/project-dashboard.png',
     tags: ['Web App', 'Backend'],
     liveUrl: '#',
     sourceUrl: '#',
-    hint: "data dashboard"
   },
   {
     id: 4,
     title: 'Company Landing Page',
     description: 'A modern and professional landing page for a tech startup.',
     longDescription: 'Designed and developed a pixel-perfect landing page to showcase a startup\'s product. Implemented with a focus on SEO, performance, and conversion rate optimization. Used modern CSS techniques for a clean and engaging layout.',
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: '/assets/project-landing-page.png',
     tags: ['Web App', 'UI/UX'],
     liveUrl: '#',
     sourceUrl: '#',
-    hint: "tech startup"
   },
 ];
 
@@ -124,7 +121,6 @@ export function ProjectShowcase() {
                                         alt={project.title}
                                         fill
                                         className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                        data-ai-hint={project.hint}
                                     />
                                 </div>
                             </Card>
@@ -140,7 +136,7 @@ export function ProjectShowcase() {
                                     <DialogDescription>{project.longDescription}</DialogDescription>
                                 </DialogHeader>
                                 <div className="relative my-4 h-64 w-full rounded-md overflow-hidden">
-                                    <Image src={project.imageUrl} alt={project.title} fill className="object-cover" data-ai-hint={project.hint}/>
+                                    <Image src={project.imageUrl} alt={project.title} fill className="object-cover" />
                                 </div>
                                 <div className="flex gap-4">
                                     <Button asChild className="flex-1">

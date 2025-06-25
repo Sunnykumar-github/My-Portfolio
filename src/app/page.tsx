@@ -1,5 +1,5 @@
 
-import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Twitter, Lightbulb, MessageSquareText, Puzzle, Users } from 'lucide-react';
+import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Twitter, Lightbulb, MessageSquareText, Puzzle, Users, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { Header } from '@/components/header';
@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import Image from 'next/image';
 import { AnimatedOnScroll } from '@/components/animated-on-scroll';
 import { cn } from '@/lib/utils';
+import { ThemeProvider } from '@/components/theme-provider';
 
 const ReactIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.23174 23 20.46348" className="h-full w-full">
@@ -136,11 +137,10 @@ function HeroSection() {
             </Badge>
           </div>
           <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
-            John Doe
+            Sunny Kumar
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-400">
-            A creative Full-Stack Developer crafting modern, responsive, and
-            performant web applications.
+            Software Engineer and Full-Stack Developer crafting next-gen web experiences blending code, creativity and AI.
           </p>
           <div className="mt-8 flex justify-center gap-4 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-600">
             <Button asChild size="lg" className="transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
@@ -170,10 +170,10 @@ function AboutSection() {
               About Me
             </h2>
             <p className="text-muted-foreground">
-              I'm a passionate developer with a knack for building beautiful and functional user interfaces. With a strong foundation in both front-end and back-end technologies, I enjoy bringing ideas to life in the browser. I'm a lifelong learner, always excited to explore new technologies and improve my craft.
+              Passionate software developer with expertise in Full-Stack Development, Artificial Intelligence, Machine Learning. Currently pursuing B.Tech in Chemical Engineering from Birla Institute of Technology, Mesra with a strong foundation in algorithms, machine learning, and modern web technologies.
             </p>
             <p className="text-muted-foreground">
-              When I'm not coding, you can find me exploring the outdoors, contributing to open-source projects, or brewing the perfect cup of coffee.
+              Experienced in building scalable applications, AI-powered solutions, and innovative projects that solve real-world problems. When I'm not coding, you can find me exploring the outdoors, contributing to open-source projects, or brewing the perfect cup of coffee.
             </p>
           </div>
         </AnimatedOnScroll>
@@ -183,12 +183,11 @@ function AboutSection() {
               <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl opacity-50 transition-all duration-500 group-hover:opacity-75 group-hover:bg-primary/30 group-hover:blur-4xl"></div>
               
               <Image
-                src="https://placehold.co/600x600.png"
-                alt="John Doe coding"
+                src="/assets/profile.png"
+                alt="Sunny Kumar"
                 width={400}
                 height={400}
                 className="relative rounded-full object-cover shadow-2xl"
-                data-ai-hint="man coding"
               />
             </div>
           </div>
@@ -461,22 +460,8 @@ function ContactSection() {
         
         <div className="mx-auto mt-12 grid max-w-5xl gap-12 md:grid-cols-2">
             <AnimatedOnScroll
-                classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000 delay-400"
+                classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000 delay-200"
                 classNameOut="animate-out fade-out slide-out-to-left-16 duration-1000 opacity-0"
-            >
-                <Card className="h-full">
-                    <CardHeader>
-                        <CardTitle>Send a Message</CardTitle>
-                        <CardDescription>Fill out the form and I'll get back to you soon.</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <ContactForm />
-                    </CardContent>
-                </Card>
-            </AnimatedOnScroll>
-            <AnimatedOnScroll
-                classNameIn="animate-in fade-in slide-in-from-right-16 duration-1000 delay-200"
-                classNameOut="animate-out fade-out slide-out-to-right-16 duration-1000 opacity-0"
                 className="flex flex-col justify-center space-y-8"
             >
                 <div>
@@ -509,6 +494,20 @@ function ContactSection() {
                     </div>
                 </div>
             </AnimatedOnScroll>
+            <AnimatedOnScroll
+                classNameIn="animate-in fade-in slide-in-from-right-16 duration-1000 delay-400"
+                classNameOut="animate-out fade-out slide-out-to-right-16 duration-1000 opacity-0"
+            >
+                <Card className="h-full">
+                    <CardHeader>
+                        <CardTitle>Send a Message</CardTitle>
+                        <CardDescription>Fill out the form and I'll get back to you soon.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <ContactForm />
+                    </CardContent>
+                </Card>
+            </AnimatedOnScroll>
         </div>
       </div>
     </section>
@@ -524,7 +523,7 @@ function Footer() {
           <span className="font-headline text-lg font-bold">CodeCraft Folio</span>
         </div>
         <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} John Doe. All rights reserved.
+          &copy; {new Date().getFullYear()} Sunny Kumar. All rights reserved.
         </p>
       </div>
     </footer>
