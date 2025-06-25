@@ -1,4 +1,4 @@
-import { Briefcase, Code, Github, GraduationCap, Linkedin, Mail, Palette, Server, Twitter } from 'lucide-react';
+import { Briefcase, Code, Database, GitMerge, Github, GraduationCap, Linkedin, Mail, Palette, Server, Smartphone, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { Header } from '@/components/header';
@@ -16,8 +16,8 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <AboutSection />
-        <ProjectSection />
-        <ServicesSection />
+        <SkillsSection />
+        <MyWorkSection />
         <ContactSection />
       </main>
       <Footer />
@@ -59,7 +59,7 @@ function HeroSection() {
               <Link href="#contact">Get in Touch</Link>
             </Button>
             <Button asChild size="lg" variant="secondary" className="transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
-              <Link href="#projects">View My Work</Link>
+              <Link href="#my-work">View My Work</Link>
             </Button>
           </div>
         </div>
@@ -74,7 +74,7 @@ function AboutSection() {
     <section id="about" className="w-full bg-secondary py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto grid items-center gap-12 px-4 md:grid-cols-2 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in slide-in-from-left-16 duration-700"
+          classNameIn="animate-in fade-in slide-in-from-left-16 duration-1000"
           classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
         >
           <div className="space-y-4">
@@ -110,8 +110,8 @@ function AboutSection() {
           </div>
         </AnimatedOnScroll>
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in slide-in-from-left-16 duration-700 delay-200"
-          classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+          classNameIn="animate-in fade-in slide-in-from-right-16 duration-1000 delay-200"
+          classNameOut="animate-out fade-out slide-out-to-right-16 duration-500 opacity-0"
           className="relative hidden items-center justify-center md:flex"
         >
           <div className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]">
@@ -135,13 +135,92 @@ function AboutSection() {
   );
 }
 
-function ProjectSection() {
+const skills = [
+  {
+    icon: Code,
+    title: 'Frontend',
+    description: 'React, Next.js, TypeScript, Tailwind CSS, HTML5, CSS3',
+  },
+  {
+    icon: Server,
+    title: 'Backend',
+    description: 'Node.js, Express, Python, Flask, Firebase, SQL, NoSQL',
+  },
+  {
+    icon: Palette,
+    title: 'UI/UX Design',
+    description: 'Figma, Adobe XD, User Research, Wireframing, Prototyping',
+  },
+  {
+    icon: Smartphone,
+    title: 'Mobile',
+    description: 'React Native, Responsive Design',
+  },
+  {
+    icon: Database,
+    title: 'Databases',
+    description: 'PostgreSQL, MongoDB, Firebase Firestore',
+  },
+  {
+    icon: GitMerge,
+    title: 'DevOps & Tools',
+    description: 'Git, GitHub, Docker, Vercel, CI/CD',
+  },
+];
+
+function SkillsSection() {
   return (
-    <section id="projects" className="w-full py-20 md:py-32 overflow-hidden">
+    <section id="skills" className="w-full bg-secondary py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in slide-in-from-left-16 duration-700"
-          classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+          classNameIn="animate-in fade-in duration-1000"
+          classNameOut="animate-out fade-out duration-500 opacity-0"
+          className="mb-12 text-center"
+        >
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+            My Skills
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            A look at the technologies and tools I work with.
+          </p>
+        </AnimatedOnScroll>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {skills.map((skill, index) => (
+            <AnimatedOnScroll
+              key={skill.title}
+              classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-1000"
+              classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-500 opacity-0"
+              style={{ animationDelay: `${index * 150}ms` }}
+              className="h-full"
+            >
+              <Card 
+                className="text-center transition-transform duration-300 hover:-translate-y-2 h-full"
+              >
+                <CardHeader>
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <skill.icon className="h-8 w-8" />
+                  </div>
+                  <CardTitle className="mt-4 font-headline">{skill.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{skill.description}</p>
+                </CardContent>
+              </Card>
+            </AnimatedOnScroll>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function MyWorkSection() {
+  return (
+    <section id="my-work" className="w-full py-20 md:py-32 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
+        <AnimatedOnScroll
+          classNameIn="animate-in fade-in duration-1000"
+          classNameOut="animate-out fade-out duration-500 opacity-0"
           className="mb-12 text-center"
         >
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -157,76 +236,13 @@ function ProjectSection() {
   );
 }
 
-const services = [
-  {
-    icon: Code,
-    title: 'Frontend Development',
-    description: 'Crafting beautiful, responsive, and performant user interfaces with modern frameworks like React and Next.js.',
-  },
-  {
-    icon: Server,
-    title: 'Backend Development',
-    description: 'Building robust and scalable server-side applications and APIs using Node.js, Python, and other technologies.',
-  },
-  {
-    icon: Palette,
-    title: 'UI/UX Design',
-    description: 'Designing intuitive and engaging user experiences from wireframes to high-fidelity mockups using Figma.',
-  },
-];
-
-function ServicesSection() {
-  return (
-    <section id="services" className="w-full bg-secondary py-20 md:py-32 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
-        <AnimatedOnScroll
-          classNameIn="animate-in fade-in slide-in-from-left-16 duration-700"
-          classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
-          className="mb-12 text-center"
-        >
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-            What I Do
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            I offer a range of services to help you build your next digital product.
-          </p>
-        </AnimatedOnScroll>
-        <div className="grid gap-8 md:grid-cols-3">
-          {services.map((service, index) => (
-            <AnimatedOnScroll
-              key={service.title}
-              classNameIn="animate-in fade-in slide-in-from-left-16 duration-700"
-              classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
-              className={`delay-[${index * 150}ms] h-full`}
-            >
-              <Card 
-                className="text-center transition-transform duration-300 hover:-translate-y-2 h-full"
-              >
-                <CardHeader>
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <service.icon className="h-8 w-8" />
-                  </div>
-                  <CardTitle className="mt-4 font-headline">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-              </Card>
-            </AnimatedOnScroll>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function ContactSection() {
   return (
     <section id="contact" className="w-full py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in slide-in-from-left-16 duration-700"
-          classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+          classNameIn="animate-in fade-in duration-1000"
+          classNameOut="animate-out fade-out duration-500 opacity-0"
           className="mx-auto max-w-3xl text-center"
         >
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -237,8 +253,8 @@ function ContactSection() {
           </p>
         </AnimatedOnScroll>
         <AnimatedOnScroll
-          classNameIn="animate-in fade-in slide-in-from-left-16 duration-700 delay-200"
-          classNameOut="animate-out fade-out slide-out-to-left-16 duration-500 opacity-0"
+          classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-200"
+          classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-500 opacity-0"
           className="mx-auto mt-12 max-w-xl"
         >
           <Card>
