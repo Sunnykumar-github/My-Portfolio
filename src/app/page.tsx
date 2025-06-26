@@ -157,7 +157,6 @@ const MsOfficeIcon = () => (
 function TypingEffect() {
     const [text, setText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
-    const [loopNum, setLoopNum] = useState(0);
 
     const textToType = "Sunny Kumar";
     const typingPeriod = 150;
@@ -165,29 +164,37 @@ function TypingEffect() {
     const pausePeriod = 2000;
 
     useEffect(() => {
-        const handleTyping = () => {
-            if (isDeleting) {
-                if (text.length > 0) {
-                    setText(prev => prev.substring(0, prev.length - 1));
-                } else {
-                    setIsDeleting(false);
-                    setLoopNum(prev => prev + 1);
-                }
-            } else {
-                if (text.length < textToType.length) {
-                    setText(prev => textToType.substring(0, prev.length + 1));
-                } else {
-                    setTimeout(() => setIsDeleting(true), pausePeriod);
-                }
-            }
-        };
+        let timer: NodeJS.Timeout;
 
-        if (isDeleting || text.length < textToType.length) {
-            const timer = setTimeout(handleTyping, isDeleting ? deletingPeriod : typingPeriod);
-            return () => clearTimeout(timer);
+        if (isDeleting) {
+            if (text.length > 0) {
+                // Deleting
+                timer = setTimeout(() => {
+                    setText(prev => prev.substring(0, prev.length - 1));
+                }, deletingPeriod);
+            } else {
+                // Finished deleting, start typing again after a pause
+                timer = setTimeout(() => {
+                    setIsDeleting(false);
+                }, 500); // Pause before re-typing
+            }
+        } else { // Typing
+            if (text.length < textToType.length) {
+                // Typing
+                timer = setTimeout(() => {
+                    setText(prev => textToType.substring(0, prev.length + 1));
+                }, typingPeriod);
+            } else {
+                // Finished typing, pause then start deleting
+                timer = setTimeout(() => {
+                    setIsDeleting(true);
+                }, pausePeriod);
+            }
         }
 
-    }, [text, isDeleting, loopNum]);
+        return () => clearTimeout(timer);
+    }, [text, isDeleting]);
+
 
     return (
         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200 flex justify-center items-center h-20 sm:h-24 md:h-28 lg:h-32">
