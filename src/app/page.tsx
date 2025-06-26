@@ -257,7 +257,7 @@ function HeroSection() {
               <Link href="#my-work">View My Work</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
-              <Link href="/sunnyresume.pdf" download="Sunny_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <Link href="/T-Resume.pdf" download="Sunny_Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <FileDown className="mr-2 h-5 w-5" />
                 Resume
               </Link>
