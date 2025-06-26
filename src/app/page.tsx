@@ -158,7 +158,7 @@ function TypingEffect() {
     const [text, setText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
 
-    const textToType = "Sunny Kumar";
+    const textToType = "Kumar";
     const typingPeriod = 150;
     const deletingPeriod = 75;
     const pausePeriod = 2000;
@@ -198,7 +198,7 @@ function TypingEffect() {
 
     return (
         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200 flex justify-center items-center h-20 sm:h-24 md:h-28 lg:h-32">
-            <span>{text}</span>
+            <span>Sunny {text}</span>
             <span className="text-primary animate-pulse ml-1">|</span>
         </h1>
     );
