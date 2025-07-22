@@ -158,7 +158,7 @@ function TypingEffect() {
     const [text, setText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
 
-    const textToType = "I am Sunny !";
+    const textToType = ` I'm Sunny !`;
     const typingPeriod = 150;
     const deletingPeriod = 75;
     const pausePeriod = 2000;
