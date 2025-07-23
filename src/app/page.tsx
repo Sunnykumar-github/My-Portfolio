@@ -154,6 +154,20 @@ const MsOfficeIcon = () => (
     </svg>
 )
 
+const ExpressIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+        <title>Express.js</title>
+        <path d="M24 18.52h-3.45l-2.28-3.03-2.28 3.03H12V5.48h3.45v6.45l2.28-3.03L20.01 12v-6.5h3.99v13.02zM10.17 5.48H0V8.5h8.55v3.03H1.62v3.04h6.93v3.02H0v3.04h10.17z"/>
+    </svg>
+)
+
+const MySqlIcon = () => (
+  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-full w-full" fill="currentColor">
+    <title>MySQL</title>
+    <path d="M11.536 14.391c-1.087 0-2.219.02-3.326.02-1.01 0-1.608.532-1.608 1.63v1.448c0 1.078.617 1.629 1.608 1.629h2.321c.951 0 1.528-.488 1.528-1.428v-2.05c0-.498-.24-.849-.523-.849zm-2.219 4.298H7.01c-.56 0-.749-.24-.749-.789v-.93c0-.55.188-.789.749-.789h2.316c.54 0 .75.24.75.789v.93c0 .55-.21.789-.75.789zm8.56-4.298c-1.087 0-2.219.02-3.326.02-1.01 0-1.608.532-1.608 1.63v1.448c0 1.078.617 1.629 1.608 1.629h2.32c.952 0 1.529-.488 1.529-1.428v-2.05c0-.498-.24-.849-.523-.849zm-2.218 4.298h-1.307c-.56 0-.749-.24-.749-.789v-.93c0-.55.188-.789.749-.789h2.316c.54 0 .75.24.75.789v.93c0 .55-.21.789-.75.789h-.56v.001zM12 4.414l-.354.354.354.353.354-.353L12 4.414zm2.474 2.475l-2.12 2.121-2.122-2.121L8.06 8.536l2.121-2.121 1.819 1.818L13.646 6.59l-2.353-2.354a.5.5 0 00-.708 0L3.13 11.691a.5.5 0 000 .707l2.354 2.354 1.646-1.647-1.818-1.818 2.121-2.121 2.121 2.121-2.12 2.121-1.648-1.647-2.354 2.354a.5.5 0 000 .707l2.354 2.354a.5.5 0 00.707 0l7.445-7.445a.5.5 0 000-.707l-2.354-2.354-1.646 1.647zm-5.463 3.535l-.707-.707L12 6.536l.707.707-3.696 3.696z" />
+  </svg>
+)
+
 function TypingEffect() {
     const [text, setText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
@@ -476,7 +490,6 @@ const skillsData = [
     skills: [
       { name: 'C', icon: <CIcon />, className: "text-[#A8B9CC]" },
       { name: 'C++', icon: <CppIcon />, className: "text-[#00599C]" },
-      { name: 'Java', icon: <JavaIcon />, className: "text-[#007396]" },
       { name: 'JavaScript', icon: <JavaScriptIcon />, className: "bg-[#F7DF1E] text-black" },
       { name: 'Python', icon: <PythonIcon />, className: "text-[#3776AB]" },
       { name: 'HTML', icon: <HtmlIcon />, className: "text-[#E34F26]" },
@@ -484,12 +497,19 @@ const skillsData = [
     ],
   },
   {
-    category: "Frameworks",
+    category: "Frameworks & Libraries",
     skills: [
-      { name: 'React.js', icon: <ReactIcon />, className: "text-[#61DAFB]" },
-      { name: 'Next.js', icon: <NextjsIcon />, className: "text-foreground" },
-      { name: 'Tailwind CSS', icon: <TailwindCssIcon />, className: "text-[#38B2AC]" },
+      { name: 'Express.js', icon: <ExpressIcon />, className: "" },
+      { name: 'React', icon: <ReactIcon />, className: "text-[#61DAFB]" },
       { name: 'Node.js', icon: <NodejsIcon />, className: "text-[#339933]" },
+      { name: 'Tailwind CSS', icon: <TailwindCssIcon />, className: "text-[#38B2AC]" },
+    ],
+  },
+  {
+    category: "Databases",
+    skills: [
+      { name: 'MySQL', icon: <MySqlIcon />, className: "text-[#4479A1]" },
+      { name: 'PostgreSQL', icon: <PostgreSqlIcon />, className: "text-[#4169E1]" },
       { name: 'MongoDB', icon: <MongoDbIcon />, className: "text-[#47A248]" },
     ],
   },
@@ -499,12 +519,6 @@ const skillsData = [
         { name: 'VS Code', icon: <VscodeIcon />, className: "text-[#007ACC]" },
         { name: 'GitHub', icon: <Github className="h-full w-full" />, className: "text-foreground" },
         { name: 'Git', icon: <GitIcon />, className: "text-[#F05032]" },
-        { name: 'Postman', icon: <PostmanIcon />, className: "text-[#FF6C37]" },
-        { name: 'SQL', icon: <Database className="h-full w-full" />, className: "text-primary" },
-        { name: 'NoSQL', icon: <DatabaseZap className="h-full w-full" />, className: "text-primary" },
-        { name: 'PostgreSQL', icon: <PostgreSqlIcon />, className: "text-[#4169E1]" },
-        { name: 'Docker', icon: <DockerIcon />, className: "text-[#2496ED]" },
-        { name: 'Figma', icon: <FigmaIcon />, className: "" },
         { name: 'Power BI', icon: <PowerBiIcon />, className: "text-[#F2C811]" },
         { name: 'MS Office', icon: <MsOfficeIcon />, className: "text-[#D83B01]" },
     ]
@@ -515,7 +529,6 @@ const skillsData = [
         { name: 'Leadership', icon: <Users className="h-full w-full" />, className: "text-primary" },
         { name: 'Event Management', icon: <CalendarDays className="h-full w-full" />, className: "text-primary" },
         { name: 'Content Writing', icon: <FileText className="h-full w-full" />, className: "text-primary" },
-        { name: 'Public Speaking', icon: <Mic className="h-full w-full" />, className: "text-primary" },
         { name: 'Time Management', icon: <Clock className="h-full w-full" />, className: "text-primary" },
     ]
   }
@@ -542,8 +555,8 @@ function SkillsSection() {
           {skillsData.map((category) => (
             <div key={category.category}>
               <AnimatedOnScroll
-                classNameIn="animate-in fade-in slide-in-from-bottom-8 duration-1000"
-                classNameOut="animate-out fade-out slide-out-to-bottom-8 duration-1000 opacity-0"
+                classNameIn="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100"
+                classNameOut="animate-out fade-out slide-out-to-bottom-8"
               >
                 <h3 className="font-headline text-2xl font-semibold mb-8 text-center">{category.category}</h3>
               </AnimatedOnScroll>
@@ -551,13 +564,13 @@ function SkillsSection() {
                 {category.skills.map((skill, skillIndex) => (
                     <AnimatedOnScroll
                       key={skill.name}
-                      classNameIn="animate-in fade-in slide-in-from-bottom-16 duration-1000"
-                      classNameOut="animate-out fade-out slide-out-to-bottom-16 duration-1000 opacity-0"
-                      style={{ animationDelay: `${skillIndex * 100}ms` }}
+                      classNameIn="animate-in fade-in zoom-in-95 duration-500"
+                      classNameOut="animate-out fade-out zoom-out-95"
+                      style={{ animationDelay: `${200 + skillIndex * 75}ms` }}
                       className="h-full"
                     >
                       <Card 
-                        className="flex h-full flex-col items-center justify-center p-4 text-center transition-transform duration-300 hover:-translate-y-2"
+                        className="flex h-full flex-col items-center justify-center p-4 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-primary/20 hover:shadow-lg"
                       >
                         <div className={cn("flex h-16 w-16 items-center justify-center rounded-full p-3", skill.className)}>
                             {skill.icon}
