@@ -172,7 +172,7 @@ function TypingEffect() {
     const [text, setText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
 
-    const textToType = ` I'm Sunny !`;
+    const textToType = `I'm Sunny  !`;
     const typingPeriod = 150;
     const deletingPeriod = 75;
     const pausePeriod = 2000;
@@ -229,8 +229,8 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <AboutSection />
-        <ExperienceSection />
         <EducationSection />
+        <ExperienceSection />
         <SkillsSection />
         <MyWorkSection />
         <ContactSection />
@@ -300,7 +300,8 @@ function AboutSection() {
               About Me
             </h2>
             <p className="text-muted-foreground">
-              Passionate software developer with expertise in Full-Stack Development, Artificial Intelligence, Machine Learning. Currently pursuing B.Tech in Chemical Engineering from Birla Institute of Technology, Mesra with a strong foundation in algorithms, machine learning, and modern web technologies.
+              Passionate software developer with expertise in Full-Stack Development. Currently pursuing B.Tech in Chemical Engineering from Birla Institute of Technology, Mesra with a strong foundation in algorithms and modern web technologies.
+              {/* Passionate software developer with expertise in Full-Stack Development, Artificial Intelligence, Machine Learning. Currently pursuing B.Tech in Chemical Engineering from Birla Institute of Technology, Mesra with a strong foundation in algorithms, machine learning, and modern web technologies.*/}
             </p>
             <p className="text-muted-foreground">
               Experienced in building scalable applications, AI-powered solutions, and innovative projects that solve real-world problems. When I'm not coding, you can find me exploring the outdoors, contributing to open-source projects, or brewing the perfect cup of coffee.
@@ -333,8 +334,8 @@ function AboutSection() {
 function ExperienceSection() {
   const experiences = [
     {
-      role: `Remote Developer ( Freelancer )`,
-      company: 'BIT Cycles Rental | 2024 - Present',
+      role: `BIT Cycles Rental`,
+      company: 'Founder | 2024 - Present',
       description: [
         'Designed and developed a responsive, mobile-first website for an on-campus cycle rental service, enabling ₹50/day bookings with an average load time under 1.2s.',
         'Built a seamless booking system supporting 100+ concurrent users, reducing average reservation time to under 30 seconds.',
