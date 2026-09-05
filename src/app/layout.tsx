@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "Sunny Kumar - Software Engineer | Full Stack Developer | AI/ML Expert",
+  title: "Sunny Kumar | Data Scientist, Data Engineer, Analyst, Product Manager, Category Manager, Builder",
   description: "Portfolio website of Sunny Kumar",
 };
 
@@ -29,10 +29,8 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
+          defaultTheme="light"
+          enableSystem={false}
         >
           {children}
           <Toaster />

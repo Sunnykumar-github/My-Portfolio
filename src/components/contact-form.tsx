@@ -3,8 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import React, { useEffect } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import React, { useState } from "react";
 import { Loader2, Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -19,7 +18,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { submitContactForm } from "@/app/actions";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -29,30 +27,10 @@ const formSchema = z.object({
     .min(10, { message: "Message must be at least 10 characters long." }),
 });
 
-const initialState = {
-  message: "",
-  success: false,
-};
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-
-  return (
-    <Button type="submit" className="w-full" disabled={pending}>
-      {pending ? (
-        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-      ) : (
-        <Send className="mr-2 h-4 w-4" />
-      )}
-      Send Message
-    </Button>
-  );
-}
-
 export function ContactForm() {
   const { toast } = useToast();
-  const [state, formAction] = useFormState(submitContactForm, initialState);
-  
+  const [pending, setPending] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -62,27 +40,27 @@ export function ContactForm() {
     },
   });
 
-  useEffect(() => {
-    if (state.message) {
-      if (state.success) {
-        toast({
-          title: "Success!",
-          description: state.message,
-        });
-        form.reset();
-      } else {
-        toast({
-          title: "Error",
-          description: state.message,
-          variant: "destructive",
-        });
-      }
-    }
-  }, [state, toast, form]);
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    setPending(true);
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${values.name}`);
+    const body = encodeURIComponent(`From: ${values.name} <${values.email}>\n\n${values.message}`);
+
+    // Trigger native email client
+    window.location.href = `mailto:oneplussunny01@gmail.com?subject=${subject}&body=${body}`;
+
+    setTimeout(() => {
+      setPending(false);
+      toast({
+        title: "Mail Route Triggered!",
+        description: "Your default email client has been opened to finalize.",
+      });
+      form.reset();
+    }, 1000);
+  };
 
   return (
     <Form {...form}>
-      <form action={formAction} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <FormField
           control={form.control}
           name="name"
@@ -118,7 +96,7 @@ export function ContactForm() {
               <FormControl>
                 <Textarea
                   placeholder="Tell me about your project..."
-                  className="min-h-[120px]"
+                  className="min-h-[120px] resize-none"
                   {...field}
                 />
               </FormControl>
@@ -126,7 +104,14 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <SubmitButton />
+        <Button type="submit" className="w-full transition-transform duration-300 hover:scale-105" disabled={pending}>
+          {pending ? (
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <Send className="mr-2 h-4 w-4" />
+          )}
+          Send Message
+        </Button>
       </form>
     </Form>
   );

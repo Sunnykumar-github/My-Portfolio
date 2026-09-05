@@ -1,0 +1,35 @@
+
+> nextn@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.3.3 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.152:3000
+
+ ✓ Starting...
+ ✓ Ready in 1088ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1888ms
+ GET / 200 in 2617ms
+ GET / 200 in 491ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 631ms
+ GET /favicon.ico?favicon.768240a9.ico 200 in 956ms
+ GET / 200 in 556ms
+ GET /favicon.ico?favicon.768240a9.ico 200 in 313ms
+ GET / 200 in 103ms
+ GET / 200 in 108ms
+ GET / 200 in 109ms
+ GET / 200 in 126ms
+ GET / 200 in 116ms
+ GET / 200 in 116ms
+ ✓ Compiled in 151ms
+ GET / 200 in 308ms
+ ⨯ upstream image response timed out for https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80
+ ⨯ upstream image response timed out for https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80
+ ⨯ upstream image response timed out for https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80
+ ⨯ upstream image response timed out for https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80
+ ⨯ upstream image response timed out for https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80
+ ⨯ upstream image response timed out for https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80
+ GET / 200 in 951ms
+ GET /favicon.ico?favicon.768240a9.ico 200 in 305ms

@@ -10,15 +10,15 @@ interface AnimatedOnScrollProps extends React.HTMLAttributes<HTMLDivElement> {
   threshold?: number;
 }
 
-export function AnimatedOnScroll({ 
-    children, 
-    className, 
-    classNameIn, 
-    classNameOut, 
-    threshold = 0.1,
-    ...props
+export function AnimatedOnScroll({
+  children,
+  className,
+  classNameIn,
+  classNameOut,
+  threshold = 0.1,
+  ...props
 }: AnimatedOnScrollProps) {
-  const [isIntersecting, setIntersecting] = useState(false);
+  const [isIntersecting, setIntersecting] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
